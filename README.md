@@ -2,6 +2,7 @@
   <img src="icon.png" alt="Sudoku App Icon" width="120" style="border-radius: 22%; margin-bottom: 16px;"/>
   <h1>Sudoku</h1>
   <p><em>A clean, minimal Sudoku for iPhone and iPad</em></p>
+  <p><a href="https://kazimirm.github.io/sudoku-privacy/guide">📖 How to Play &amp; Game Guide</a></p>
 </div>
 
 ---
