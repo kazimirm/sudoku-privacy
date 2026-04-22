@@ -20,223 +20,135 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      background: var(--bg); color: var(--text); line-height: 1.6;
     }
-
-    /* Header */
     header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 24px 28px;
-      text-align: center;
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 32px 24px 28px; text-align: center;
     }
     header img.icon {
-      width: 96px;
-      height: 96px;
-      border-radius: 22%;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+      width: 96px; height: 96px; border-radius: 22%;
+      margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.12);
     }
     header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.5px; }
-    header p { color: var(--secondary); margin-top: 6px; font-size: 1.05rem; }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    header p.subtitle { color: var(--secondary); margin-top: 6px; font-size: 1.05rem; }
+    .lang-picker {
+      display: flex; justify-content: center;
+      gap: 6px; flex-wrap: wrap; margin-top: 18px;
     }
+    .lang-btn {
+      background: none; border: 1px solid var(--border);
+      border-radius: 8px; padding: 5px 10px;
+      font-size: .82rem; cursor: pointer;
+      color: var(--secondary); transition: all .15s; font-family: inherit;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
     nav a {
-      font-size: .85rem;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 5px 14px;
-      border: 1px solid var(--accent);
-      border-radius: 20px;
-      transition: background .15s, color .15s;
+      font-size: .85rem; color: var(--accent); text-decoration: none;
+      padding: 5px 14px; border: 1px solid var(--accent);
+      border-radius: 20px; transition: background .15s, color .15s;
     }
     nav a:hover { background: var(--accent); color: #fff; }
-
-    /* Layout */
     main { max-width: 820px; margin: 0 auto; padding: 40px 20px 64px; }
-
     section { margin-bottom: 52px; }
     h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -.3px;
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
+      font-size: 1.5rem; font-weight: 700; letter-spacing: -.3px;
+      margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--border);
     }
     h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; }
     p { color: var(--text); margin-bottom: 12px; }
-    p + ul, p + ol { margin-top: -6px; }
     ul, ol { padding-left: 22px; margin-bottom: 12px; }
     li { margin-bottom: 5px; }
     strong { font-weight: 600; }
-
-    /* Cards */
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px 22px;
-      margin-bottom: 14px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 22px; margin-bottom: 14px;
     }
     .card h3 { margin-top: 0; }
-
-    /* Screenshot grid */
     .screenshots {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-      justify-items: center;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px; margin-top: 20px; justify-items: center;
     }
     .screenshot-item { text-align: center; margin: 0 auto; }
     .screenshot-item img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(0,0,0,.10);
+      width: 100%; max-width: 200px; border-radius: 22px;
+      border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,.10);
     }
-    .screenshot-item figcaption {
-      font-size: .8rem;
-      color: var(--secondary);
-      margin-top: 8px;
-    }
-
-    /* Two-col screenshot layout */
+    .screenshot-item figcaption { font-size: .8rem; color: var(--secondary); margin-top: 8px; }
     .screenshot-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 20px;
-      justify-items: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 20px; justify-items: center;
     }
     @media (max-width: 500px) {
       .screenshot-pair { grid-template-columns: 1fr; }
       .screenshots { grid-template-columns: repeat(2, 1fr); }
     }
-
-    /* Rules grid */
     .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px; margin-top: 16px;
     }
     .rule-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 18px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
     }
     .rule-card .rule-icon { font-size: 1.8rem; margin-bottom: 8px; }
     .rule-card h3 { margin: 0 0 6px; font-size: 1rem; }
     .rule-card p { font-size: .9rem; color: var(--secondary); margin: 0; }
-
-    /* Difficulty badges */
     .diff-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
     .diff-table th, .diff-table td {
-      text-align: left;
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      font-size: .93rem;
+      text-align: left; padding: 10px 14px;
+      border-bottom: 1px solid var(--border); font-size: .93rem;
     }
     .diff-table th { font-weight: 600; color: var(--secondary); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
     .badge {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 10px;
-      font-size: .8rem;
-      font-weight: 600;
-      color: #fff;
+      display: inline-block; padding: 2px 10px;
+      border-radius: 10px; font-size: .8rem; font-weight: 600; color: #fff;
     }
-    .badge-easy   { background: var(--green); }
+    .badge-easy { background: var(--green); }
     .badge-medium { background: var(--orange); }
-    .badge-hard   { background: var(--red); }
+    .badge-hard { background: var(--red); }
     .badge-expert { background: var(--purple); }
-
-    /* Toolbar legend */
     .toolbar-legend {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 10px;
-      margin-top: 14px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px; margin-top: 14px;
     }
     .toolbar-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 14px;
-      text-align: center;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px; text-align: center;
     }
     .toolbar-item .ti-icon { font-size: 1.4rem; margin-bottom: 4px; }
     .toolbar-item .ti-name { font-size: .85rem; font-weight: 600; display: block; }
     .toolbar-item .ti-desc { font-size: .78rem; color: var(--secondary); margin-top: 2px; }
-
-    /* Color legend */
     .color-legend { margin-top: 14px; }
     .color-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .93rem;
+      display: flex; align-items: center; gap: 14px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .93rem;
     }
     .color-row:last-child { border-bottom: none; }
     .color-swatch {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.1rem;
     }
-
-    /* Tips */
     .tips-list { list-style: none; padding: 0; }
     .tips-list li {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 10px;
-      padding-left: 46px;
-      position: relative;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px 14px 46px;
+      margin-bottom: 10px; position: relative;
     }
     .tips-list li::before {
-      content: attr(data-n);
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--accent);
-      color: #fff;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      font-size: .75rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      content: attr(data-n); position: absolute;
+      left: 14px; top: 50%; transform: translateY(-50%);
+      background: var(--accent); color: #fff;
+      width: 22px; height: 22px; border-radius: 50%;
+      font-size: .75rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
     }
-
     footer {
-      text-align: center;
-      padding: 24px;
-      font-size: .82rem;
-      color: var(--secondary);
+      text-align: center; padding: 24px;
+      font-size: .82rem; color: var(--secondary);
       border-top: 1px solid var(--border);
     }
     footer a { color: var(--accent); text-decoration: none; }
@@ -247,230 +159,228 @@
 <header>
   <img class="icon" src="icon.png" alt="Sudoku App Icon" />
   <h1>Sudoku</h1>
-  <p>A clean, minimal Sudoku for iPhone and iPad</p>
+  <p class="subtitle" data-i18n="subtitle">A clean, minimal Sudoku for iPhone and iPad</p>
+  <div class="lang-picker">
+    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+    <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+    <button class="lang-btn" data-lang="sk">🇸🇰 SK</button>
+    <button class="lang-btn" data-lang="cs">🇨🇿 CS</button>
+    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+    <button class="lang-btn" data-lang="zh">🇨🇳 ZH</button>
+  </div>
   <nav>
-    <a href="#rules">Rules</a>
-    <a href="#how-to-play">How to Play</a>
-    <a href="#features">Features</a>
-    <a href="#tips">Tips</a>
-    <a href="https://kazimirm.github.io/sudoku-privacy">Privacy Policy</a>
+    <a href="#rules" data-i18n="nav_rules">Rules</a>
+    <a href="#how-to-play" data-i18n="nav_how">How to Play</a>
+    <a href="#features" data-i18n="nav_features">Features</a>
+    <a href="#tips" data-i18n="nav_tips">Tips</a>
+    <a href="index.html" data-i18n="nav_privacy">Privacy Policy</a>
   </nav>
 </header>
 
 <main>
 
-  <!-- SUDOKU RULES -->
+  <!-- RULES -->
   <section id="rules">
-    <h2>Sudoku Rules</h2>
-    <p>Sudoku is a logic puzzle played on a <strong>9×9 grid</strong> divided into nine <strong>3×3 boxes</strong>. The grid starts partially filled. Your goal is to fill every empty cell with a digit from 1 to 9 following three simple rules:</p>
-
+    <h2 data-i18n="rules_h2">Sudoku Rules</h2>
+    <p data-i18n-html="rules_intro">Sudoku is a logic puzzle played on a <strong>9×9 grid</strong> divided into nine <strong>3×3 boxes</strong>. The grid starts partially filled. Your goal is to fill every empty cell with a digit from 1 to 9 following three simple rules:</p>
     <div class="rules-grid">
       <div class="rule-card">
         <div class="rule-icon">↔️</div>
-        <h3>Each row</h3>
-        <p>must contain the digits 1–9 with no repetition.</p>
+        <h3 data-i18n="rule_row_title">Each row</h3>
+        <p data-i18n="rule_row_desc">must contain the digits 1–9 with no repetition.</p>
       </div>
       <div class="rule-card">
         <div class="rule-icon">↕️</div>
-        <h3>Each column</h3>
-        <p>must contain the digits 1–9 with no repetition.</p>
+        <h3 data-i18n="rule_col_title">Each column</h3>
+        <p data-i18n="rule_col_desc">must contain the digits 1–9 with no repetition.</p>
       </div>
       <div class="rule-card">
         <div class="rule-icon">⊞</div>
-        <h3>Each 3×3 box</h3>
-        <p>must contain the digits 1–9 with no repetition.</p>
+        <h3 data-i18n="rule_box_title">Each 3×3 box</h3>
+        <p data-i18n="rule_box_desc">must contain the digits 1–9 with no repetition.</p>
       </div>
     </div>
-
-    <p style="margin-top:18px;">Every valid Sudoku puzzle has <strong>exactly one solution</strong>. No guessing is ever required — the answer can always be found through logic alone.</p>
+    <p style="margin-top:18px;" data-i18n-html="rules_unique">Every valid Sudoku puzzle has <strong>exactly one solution</strong>. No guessing is ever required — the answer can always be found through logic alone.</p>
   </section>
 
   <!-- HOW TO PLAY -->
   <section id="how-to-play">
-    <h2>How to Play</h2>
+    <h2 data-i18n="how_h2">How to Play</h2>
 
-    <h3>Starting a game</h3>
-    <p>Tap the <strong>+</strong> button in the top-left corner to start a new game. Choose a difficulty level and a fresh puzzle is generated instantly.</p>
-
+    <h3 data-i18n="how_start_h3">Starting a game</h3>
+    <p data-i18n-html="how_start_p">Tap the <strong>+</strong> button in the top-left corner to start a new game. Choose a difficulty level and a fresh puzzle is generated instantly.</p>
     <div class="screenshot-pair">
       <figure class="screenshot-item">
         <img src="screenshots/difficulty-picker.png" alt="Difficulty picker" />
-        <figcaption>Choose your difficulty</figcaption>
+        <figcaption data-i18n="cap_difficulty">Choose your difficulty</figcaption>
       </figure>
       <figure class="screenshot-item">
         <img src="screenshots/board-empty.png" alt="Empty board" />
-        <figcaption>Fresh Expert puzzle</figcaption>
+        <figcaption data-i18n="cap_empty">Fresh Expert puzzle</figcaption>
       </figure>
     </div>
 
-    <h3>Selecting and filling a cell</h3>
-    <p>Tap any empty cell to select it — it turns blue. The entire row, column, and 3×3 box it belongs to are highlighted so you can see what numbers are already placed. Then tap a number on the pad below to fill it in.</p>
-    <p>Numbers you enter appear in <strong style="color:var(--accent)">blue</strong>. Pre-filled numbers are in <strong>black</strong>. Tap the same number again to erase your entry.</p>
-
+    <h3 data-i18n="how_select_h3">Selecting and filling a cell</h3>
+    <p data-i18n-html="how_select_p1">Tap any empty cell to select it — it turns blue. The entire row, column, and 3×3 box it belongs to are highlighted so you can see what numbers are already placed. Then tap a number on the pad below to fill it in.</p>
+    <p data-i18n-html="how_select_p2">Numbers you enter appear in <strong style="color:var(--accent)">blue</strong>. Pre-filled numbers are in <strong>black</strong>. Tap the same number again to erase your entry.</p>
     <div class="screenshot-pair">
       <figure class="screenshot-item">
         <img src="screenshots/board-selected.png" alt="Cell selected" />
-        <figcaption>Selected cell with highlights</figcaption>
+        <figcaption data-i18n="cap_selected">Selected cell with highlights</figcaption>
       </figure>
       <figure class="screenshot-item">
         <img src="screenshots/board-playing.png" alt="Board in progress" />
-        <figcaption>Blue = your numbers</figcaption>
+        <figcaption data-i18n="cap_playing">Blue = your numbers</figcaption>
       </figure>
     </div>
 
-    <h3>Number pad</h3>
-    <p>The digit buttons at the bottom show a small counter below each number indicating how many more times that digit needs to be placed. When the counter reaches 0 the button is greyed out — that digit is complete.</p>
+    <h3 data-i18n="how_pad_h3">Number pad</h3>
+    <p data-i18n="how_pad_p">The digit buttons at the bottom show a small counter below each number indicating how many more times that digit needs to be placed. When the counter reaches 0 the button is greyed out — that digit is complete.</p>
 
-    <h3>Pencil / Notes mode</h3>
-    <p>Tap the <strong>Notes</strong> button to switch to pencil mode. In this mode, tapping a digit adds it as a small candidate note inside the cell instead of filling it. Use notes to track which numbers are still possible for a cell. Tap a noted digit again to remove it.</p>
-
+    <h3 data-i18n="how_notes_h3">Pencil / Notes mode</h3>
+    <p data-i18n-html="how_notes_p">Tap the <strong>Notes</strong> button to switch to pencil mode. In this mode, tapping a digit adds it as a small candidate note inside the cell instead of filling it. Use notes to track which numbers are still possible for a cell. Tap a noted digit again to remove it.</p>
     <figure class="screenshot-item" style="margin-top:16px; max-width:200px;">
       <img src="screenshots/board-notes.png" alt="Pencil notes" />
-      <figcaption>Candidate notes in a cell</figcaption>
+      <figcaption data-i18n="cap_notes">Candidate notes in a cell</figcaption>
     </figure>
   </section>
 
   <!-- FEATURES -->
   <section id="features">
-    <h2>Features</h2>
+    <h2 data-i18n="features_h2">Features</h2>
 
-    <!-- Difficulties -->
-    <h3>Difficulty levels</h3>
-    <p>Four levels, each requiring progressively more advanced solving techniques:</p>
+    <h3 data-i18n="features_diff_h3">Difficulty levels</h3>
+    <p data-i18n="features_diff_p">Four levels, each requiring progressively more advanced solving techniques:</p>
     <table class="diff-table">
       <thead>
-        <tr><th>Level</th><th>Technique required</th><th>Best for</th></tr>
+        <tr>
+          <th data-i18n="th_level">Level</th>
+          <th data-i18n="th_technique">Technique required</th>
+          <th data-i18n="th_for">Best for</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
-          <td><span class="badge badge-easy">Easy</span></td>
-          <td>Naked Singles only</td>
-          <td>Beginners — every cell has one obvious answer</td>
+          <td><span class="badge badge-easy" data-i18n="badge_easy">Easy</span></td>
+          <td data-i18n="diff_easy_tech">Naked Singles only</td>
+          <td data-i18n="diff_easy_for">Beginners — every cell has one obvious answer</td>
         </tr>
         <tr>
-          <td><span class="badge badge-medium">Medium</span></td>
-          <td>Hidden Singles</td>
-          <td>A steady, satisfying challenge</td>
+          <td><span class="badge badge-medium" data-i18n="badge_medium">Medium</span></td>
+          <td data-i18n="diff_med_tech">Hidden Singles</td>
+          <td data-i18n="diff_med_for">A steady, satisfying challenge</td>
         </tr>
         <tr>
-          <td><span class="badge badge-hard">Hard</span></td>
-          <td>Naked Pairs</td>
-          <td>Experienced players</td>
+          <td><span class="badge badge-hard" data-i18n="badge_hard">Hard</span></td>
+          <td data-i18n="diff_hard_tech">Naked Pairs</td>
+          <td data-i18n="diff_hard_for">Experienced players</td>
         </tr>
         <tr>
-          <td><span class="badge badge-expert">Expert</span></td>
-          <td>Advanced logic</td>
-          <td>The ultimate challenge</td>
+          <td><span class="badge badge-expert" data-i18n="badge_expert">Expert</span></td>
+          <td data-i18n="diff_exp_tech">Advanced logic</td>
+          <td data-i18n="diff_exp_for">The ultimate challenge</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- Toolbar -->
-    <h3>Toolbar</h3>
+    <h3 data-i18n="features_toolbar_h3">Toolbar</h3>
     <div class="toolbar-legend">
       <div class="toolbar-item">
         <div class="ti-icon">↩</div>
-        <span class="ti-name">Undo</span>
-        <div class="ti-desc">Revert your last move</div>
+        <span class="ti-name" data-i18n="ti_undo_name">Undo</span>
+        <div class="ti-desc" data-i18n="ti_undo_desc">Revert your last move</div>
       </div>
       <div class="toolbar-item">
         <div class="ti-icon">⌫</div>
-        <span class="ti-name">Erase</span>
-        <div class="ti-desc">Clear the selected cell</div>
+        <span class="ti-name" data-i18n="ti_erase_name">Erase</span>
+        <div class="ti-desc" data-i18n="ti_erase_desc">Clear the selected cell</div>
       </div>
       <div class="toolbar-item">
         <div class="ti-icon">✏️</div>
-        <span class="ti-name">Notes</span>
-        <div class="ti-desc">Toggle pencil / candidate mode</div>
+        <span class="ti-name" data-i18n="ti_notes_name">Notes</span>
+        <div class="ti-desc" data-i18n="ti_notes_desc">Toggle pencil / candidate mode</div>
       </div>
       <div class="toolbar-item">
         <div class="ti-icon">💡</div>
-        <span class="ti-name">Hint</span>
-        <div class="ti-desc">Step-by-step explanation for one cell</div>
+        <span class="ti-name" data-i18n="ti_hint_name">Hint</span>
+        <div class="ti-desc" data-i18n="ti_hint_desc">Step-by-step explanation for one cell</div>
       </div>
       <div class="toolbar-item">
         <div class="ti-icon">↪</div>
-        <span class="ti-name">Redo</span>
-        <div class="ti-desc">Redo an undone move</div>
+        <span class="ti-name" data-i18n="ti_redo_name">Redo</span>
+        <div class="ti-desc" data-i18n="ti_redo_desc">Redo an undone move</div>
       </div>
     </div>
 
-    <!-- Hints -->
-    <h3>Hints</h3>
-    <p>Tap <strong>Hint</strong> and the app analyses the current board state and walks you through solving one cell — step by step — using the same logic a human solver would use (Naked Single, Hidden Single, etc.). You control how many steps to reveal. When you're ready, tap <strong>Place it on the board</strong> to apply the answer.</p>
-
+    <h3 data-i18n="features_hints_h3">Hints</h3>
+    <p data-i18n-html="features_hints_p">Tap <strong>Hint</strong> and the app analyses the current board state and walks you through solving one cell — step by step — using the same logic a human solver would use (Naked Single, Hidden Single, etc.). You control how many steps to reveal. When you're ready, tap <strong>Place it on the board</strong> to apply the answer.</p>
     <figure class="screenshot-item" style="margin-top:16px; max-width:200px;">
       <img src="screenshots/hint-sheet.png" alt="Hint sheet" />
-      <figcaption>Step-by-step hint explanation</figcaption>
+      <figcaption data-i18n="cap_hint">Step-by-step hint explanation</figcaption>
     </figure>
 
-    <!-- Colour coding -->
-    <h3>Colour coding</h3>
+    <h3 data-i18n="features_colors_h3">Colour coding</h3>
     <div class="color-legend">
       <div class="color-row">
         <div class="color-swatch" style="background:#f0f0f5; color:#1d1d1f">7</div>
-        <div><strong>Black</strong> — pre-filled given numbers. These cannot be changed.</div>
+        <div data-i18n-html="color_black_label"><strong>Black</strong> — pre-filled given numbers. These cannot be changed.</div>
       </div>
       <div class="color-row">
         <div class="color-swatch" style="background:#eef4fd; color:var(--accent)">5</div>
-        <div><strong>Blue</strong> — numbers you entered (including hints you placed). Tap to erase.</div>
+        <div data-i18n-html="color_blue_label"><strong>Blue</strong> — numbers you entered (including hints you placed). Tap to erase.</div>
       </div>
       <div class="color-row">
         <div class="color-swatch" style="background:#fdecea; color:var(--red)">3</div>
-        <div><strong>Red</strong> — an incorrect entry (Strict Mode only).</div>
+        <div data-i18n-html="color_red_label"><strong>Red</strong> — an incorrect entry (Strict Mode only).</div>
       </div>
       <div class="color-row">
         <div class="color-swatch" style="background:rgba(74,144,226,.18); color:var(--accent)">·</div>
-        <div><strong>Blue highlight</strong> — the selected cell and all cells sharing its row, column, or 3×3 box.</div>
+        <div data-i18n-html="color_blue_hl_label"><strong>Blue highlight</strong> — the selected cell and all cells sharing its row, column, or 3×3 box.</div>
       </div>
       <div class="color-row">
         <div class="color-swatch" style="background:rgba(255,149,0,.25); color:var(--orange)">·</div>
-        <div><strong>Orange highlight</strong> — the cell where a hint was just placed.</div>
+        <div data-i18n-html="color_orange_hl_label"><strong>Orange highlight</strong> — the cell where a hint was just placed.</div>
       </div>
     </div>
 
-    <!-- Settings -->
-    <h3>Settings</h3>
-    <p>Tap the <strong>⚙</strong> button in the top-right corner to open Settings.</p>
+    <h3 data-i18n="features_settings_h3">Settings</h3>
+    <p data-i18n-html="features_settings_p">Tap the <strong>⚙</strong> button in the top-right corner to open Settings.</p>
     <div class="card">
-      <h3>Strict Mode</h3>
-      <p>When enabled, incorrect entries are highlighted in red and counted as mistakes. Three mistakes ends the game. When disabled, wrong numbers are accepted silently — only the final solution check matters.</p>
+      <h3 data-i18n="strict_title">Strict Mode</h3>
+      <p data-i18n="strict_desc">When enabled, incorrect entries are highlighted in red and counted as mistakes. Three mistakes ends the game. When disabled, wrong numbers are accepted silently — only the final solution check matters.</p>
     </div>
     <div class="card">
-      <h3>Sound Effects</h3>
-      <p>Toggle audio feedback for number input, hints, undo/redo, and game-completion events.</p>
+      <h3 data-i18n="sound_title">Sound Effects</h3>
+      <p data-i18n="sound_desc">Toggle audio feedback for number input, hints, undo/redo, and game-completion events.</p>
     </div>
     <div class="card">
-      <h3>Language</h3>
-      <p>The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated.</p>
+      <h3 data-i18n="lang_title">Language</h3>
+      <p data-i18n="lang_desc">The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated.</p>
     </div>
-
     <figure class="screenshot-item" style="margin-top:20px; max-width:200px;">
       <img src="screenshots/settings.png" alt="Settings screen" />
-      <figcaption>Settings</figcaption>
+      <figcaption data-i18n="cap_settings">Settings</figcaption>
     </figure>
 
-    <!-- Completion -->
-    <h3>Completing a puzzle</h3>
-    <p>Fill every cell correctly and the board locks, confetti falls, and a summary card shows your time and total mistakes. Tap <strong>New Game</strong> to jump straight into the difficulty picker.</p>
-
+    <h3 data-i18n="features_complete_h3">Completing a puzzle</h3>
+    <p data-i18n-html="features_complete_p">Fill every cell correctly and the board locks, confetti falls, and a summary card shows your time and total mistakes. Tap <strong>New Game</strong> to jump straight into the difficulty picker.</p>
     <figure class="screenshot-item" style="margin-top:16px; max-width:200px;">
       <img src="screenshots/puzzle-complete.png" alt="Puzzle complete" />
-      <figcaption>Puzzle complete!</figcaption>
+      <figcaption data-i18n="cap_complete">Puzzle complete!</figcaption>
     </figure>
   </section>
 
   <!-- TIPS -->
   <section id="tips">
-    <h2>Tips &amp; Strategies</h2>
+    <h2 data-i18n="tips_h2">Tips &amp; Strategies</h2>
     <ul class="tips-list">
-      <li data-n="1"><strong>Start with the easiest cells.</strong> Look for rows, columns, or boxes that already have 7–8 numbers filled — the remaining cell has only one possible value.</li>
-      <li data-n="2"><strong>Scan one number at a time.</strong> Pick a digit (e.g. 5) and mark every row and column where it already appears. Any box missing a 5 must place it in the one remaining valid cell.</li>
-      <li data-n="3"><strong>Use pencil notes early.</strong> On Medium and above, write candidate numbers in empty cells as you eliminate possibilities. It makes patterns much easier to spot.</li>
-      <li data-n="4"><strong>Look for Hidden Singles.</strong> A digit that can only fit one cell in a row, column, or box — even if that cell has many other candidates — is called a Hidden Single. It's the most common technique on Medium difficulty.</li>
-      <li data-n="5"><strong>Naked Pairs speed things up.</strong> If two cells in the same row/column/box both have exactly the same two candidates, those two numbers can be eliminated from every other cell in that row/column/box.</li>
-      <li data-n="6"><strong>Use Undo freely.</strong> Made a mistake? Undo as many times as you need — there's no penalty.</li>
-      <li data-n="7"><strong>Use Hints to learn, not just to finish.</strong> The step-by-step hint sheet teaches you the exact technique needed for each cell. Reading through all the steps is a great way to improve your solving skills.</li>
+      <li data-n="1" data-i18n-html="tip_1"><strong>Start with the easiest cells.</strong> Look for rows, columns, or boxes that already have 7–8 numbers filled — the remaining cell has only one possible value.</li>
+      <li data-n="2" data-i18n-html="tip_2"><strong>Scan one number at a time.</strong> Pick a digit (e.g. 5) and mark every row and column where it already appears. Any box missing a 5 must place it in the one remaining valid cell.</li>
+      <li data-n="3" data-i18n-html="tip_3"><strong>Use pencil notes early.</strong> On Medium and above, write candidate numbers in empty cells as you eliminate possibilities. It makes patterns much easier to spot.</li>
+      <li data-n="4" data-i18n-html="tip_4"><strong>Look for Hidden Singles.</strong> A digit that can only fit one cell in a row, column, or box — even if that cell has many other candidates — is called a Hidden Single. It's the most common technique on Medium difficulty.</li>
+      <li data-n="5" data-i18n-html="tip_5"><strong>Naked Pairs speed things up.</strong> If two cells in the same row/column/box both have exactly the same two candidates, those two numbers can be eliminated from every other cell in that row/column/box.</li>
+      <li data-n="6" data-i18n-html="tip_6"><strong>Use Undo freely.</strong> Made a mistake? Undo as many times as you need — there's no penalty.</li>
+      <li data-n="7" data-i18n-html="tip_7"><strong>Use Hints to learn, not just to finish.</strong> The step-by-step hint sheet teaches you the exact technique needed for each cell. Reading through all the steps is a great way to improve your solving skills.</li>
     </ul>
   </section>
 
@@ -478,9 +388,451 @@
 
 <footer>
   © 2026 Marián Kažimír ·
-  <a href="https://kazimirm.github.io/sudoku-privacy">Privacy Policy</a> ·
-  <a href="mailto:kazimir.majo@gmail.com">Contact</a>
+  <a href="index.html" data-i18n="footer_privacy">Privacy Policy</a> ·
+  <a href="mailto:kazimir.majo@gmail.com" data-i18n="footer_contact">Contact</a>
 </footer>
 
+<script>
+const i18n = {
+  en: {
+    page_title: 'Sudoku – How to Play',
+    subtitle: 'A clean, minimal Sudoku for iPhone and iPad',
+    nav_rules: 'Rules', nav_how: 'How to Play', nav_features: 'Features',
+    nav_tips: 'Tips', nav_privacy: 'Privacy Policy',
+    rules_h2: 'Sudoku Rules',
+    rules_intro: 'Sudoku is a logic puzzle played on a <strong>9×9 grid</strong> divided into nine <strong>3×3 boxes</strong>. The grid starts partially filled. Your goal is to fill every empty cell with a digit from 1 to 9 following three simple rules:',
+    rule_row_title: 'Each row', rule_row_desc: 'must contain the digits 1–9 with no repetition.',
+    rule_col_title: 'Each column', rule_col_desc: 'must contain the digits 1–9 with no repetition.',
+    rule_box_title: 'Each 3×3 box', rule_box_desc: 'must contain the digits 1–9 with no repetition.',
+    rules_unique: 'Every valid Sudoku puzzle has <strong>exactly one solution</strong>. No guessing is ever required — the answer can always be found through logic alone.',
+    how_h2: 'How to Play', how_start_h3: 'Starting a game',
+    how_start_p: 'Tap the <strong>+</strong> button in the top-left corner to start a new game. Choose a difficulty level and a fresh puzzle is generated instantly.',
+    cap_difficulty: 'Choose your difficulty', cap_empty: 'Fresh Expert puzzle',
+    how_select_h3: 'Selecting and filling a cell',
+    how_select_p1: 'Tap any empty cell to select it — it turns blue. The entire row, column, and 3×3 box it belongs to are highlighted so you can see what numbers are already placed. Then tap a number on the pad below to fill it in.',
+    how_select_p2: 'Numbers you enter appear in <strong style="color:var(--accent)">blue</strong>. Pre-filled numbers are in <strong>black</strong>. Tap the same number again to erase your entry.',
+    cap_selected: 'Selected cell with highlights', cap_playing: 'Blue = your numbers',
+    how_pad_h3: 'Number pad',
+    how_pad_p: 'The digit buttons at the bottom show a small counter below each number indicating how many more times that digit needs to be placed. When the counter reaches 0 the button is greyed out — that digit is complete.',
+    how_notes_h3: 'Pencil / Notes mode',
+    how_notes_p: 'Tap the <strong>Notes</strong> button to switch to pencil mode. In this mode, tapping a digit adds it as a small candidate note inside the cell instead of filling it. Use notes to track which numbers are still possible for a cell. Tap a noted digit again to remove it.',
+    cap_notes: 'Candidate notes in a cell',
+    features_h2: 'Features', features_diff_h3: 'Difficulty levels',
+    features_diff_p: 'Four levels, each requiring progressively more advanced solving techniques:',
+    th_level: 'Level', th_technique: 'Technique required', th_for: 'Best for',
+    badge_easy: 'Easy', badge_medium: 'Medium', badge_hard: 'Hard', badge_expert: 'Expert',
+    diff_easy_tech: 'Naked Singles only', diff_easy_for: 'Beginners — every cell has one obvious answer',
+    diff_med_tech: 'Hidden Singles', diff_med_for: 'A steady, satisfying challenge',
+    diff_hard_tech: 'Naked Pairs', diff_hard_for: 'Experienced players',
+    diff_exp_tech: 'Advanced logic', diff_exp_for: 'The ultimate challenge',
+    features_toolbar_h3: 'Toolbar',
+    ti_undo_name: 'Undo', ti_undo_desc: 'Revert your last move',
+    ti_erase_name: 'Erase', ti_erase_desc: 'Clear the selected cell',
+    ti_notes_name: 'Notes', ti_notes_desc: 'Toggle pencil / candidate mode',
+    ti_hint_name: 'Hint', ti_hint_desc: 'Step-by-step explanation for one cell',
+    ti_redo_name: 'Redo', ti_redo_desc: 'Redo an undone move',
+    features_hints_h3: 'Hints',
+    features_hints_p: 'Tap <strong>Hint</strong> and the app analyses the current board state and walks you through solving one cell — step by step — using the same logic a human solver would use (Naked Single, Hidden Single, etc.). You control how many steps to reveal. When you\'re ready, tap <strong>Place it on the board</strong> to apply the answer.',
+    cap_hint: 'Step-by-step hint explanation',
+    features_colors_h3: 'Colour coding',
+    color_black_label: '<strong>Black</strong> — pre-filled given numbers. These cannot be changed.',
+    color_blue_label: '<strong>Blue</strong> — numbers you entered (including hints you placed). Tap to erase.',
+    color_red_label: '<strong>Red</strong> — an incorrect entry (Strict Mode only).',
+    color_blue_hl_label: '<strong>Blue highlight</strong> — the selected cell and all cells sharing its row, column, or 3×3 box.',
+    color_orange_hl_label: '<strong>Orange highlight</strong> — the cell where a hint was just placed.',
+    features_settings_h3: 'Settings',
+    features_settings_p: 'Tap the <strong>⚙</strong> button in the top-right corner to open Settings.',
+    strict_title: 'Strict Mode',
+    strict_desc: 'When enabled, incorrect entries are highlighted in red and counted as mistakes. Three mistakes ends the game. When disabled, wrong numbers are accepted silently — only the final solution check matters.',
+    sound_title: 'Sound Effects',
+    sound_desc: 'Toggle audio feedback for number input, hints, undo/redo, and game-completion events.',
+    lang_title: 'Language',
+    lang_desc: 'The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated.',
+    cap_settings: 'Settings', features_complete_h3: 'Completing a puzzle',
+    features_complete_p: 'Fill every cell correctly and the board locks, confetti falls, and a summary card shows your time and total mistakes. Tap <strong>New Game</strong> to jump straight into the difficulty picker.',
+    cap_complete: 'Puzzle complete!',
+    tips_h2: 'Tips & Strategies',
+    tip_1: '<strong>Start with the easiest cells.</strong> Look for rows, columns, or boxes that already have 7–8 numbers filled — the remaining cell has only one possible value.',
+    tip_2: '<strong>Scan one number at a time.</strong> Pick a digit (e.g. 5) and mark every row and column where it already appears. Any box missing a 5 must place it in the one remaining valid cell.',
+    tip_3: '<strong>Use pencil notes early.</strong> On Medium and above, write candidate numbers in empty cells as you eliminate possibilities. It makes patterns much easier to spot.',
+    tip_4: '<strong>Look for Hidden Singles.</strong> A digit that can only fit one cell in a row, column, or box — even if that cell has many other candidates — is called a Hidden Single. It\'s the most common technique on Medium difficulty.',
+    tip_5: '<strong>Naked Pairs speed things up.</strong> If two cells in the same row/column/box both have exactly the same two candidates, those two numbers can be eliminated from every other cell in that row/column/box.',
+    tip_6: '<strong>Use Undo freely.</strong> Made a mistake? Undo as many times as you need — there\'s no penalty.',
+    tip_7: '<strong>Use Hints to learn, not just to finish.</strong> The step-by-step hint sheet teaches you the exact technique needed for each cell. Reading through all the steps is a great way to improve your solving skills.',
+    footer_privacy: 'Privacy Policy', footer_contact: 'Contact',
+  },
+
+  de: {
+    page_title: 'Sudoku – Spielanleitung',
+    subtitle: 'Ein klares, minimales Sudoku für iPhone und iPad',
+    nav_rules: 'Regeln', nav_how: 'Spielanleitung', nav_features: 'Funktionen',
+    nav_tips: 'Tipps', nav_privacy: 'Datenschutz',
+    rules_h2: 'Sudoku-Regeln',
+    rules_intro: 'Sudoku ist ein Logikrätsel auf einem <strong>9×9-Gitter</strong>, das in neun <strong>3×3-Blöcke</strong> unterteilt ist. Das Gitter ist zu Beginn teilweise gefüllt. Ziel ist es, jede leere Zelle mit einer Ziffer von 1 bis 9 nach drei einfachen Regeln zu füllen:',
+    rule_row_title: 'Jede Zeile', rule_row_desc: 'muss die Ziffern 1–9 ohne Wiederholung enthalten.',
+    rule_col_title: 'Jede Spalte', rule_col_desc: 'muss die Ziffern 1–9 ohne Wiederholung enthalten.',
+    rule_box_title: 'Jeder 3×3-Block', rule_box_desc: 'muss die Ziffern 1–9 ohne Wiederholung enthalten.',
+    rules_unique: 'Jedes gültige Sudoku hat <strong>genau eine Lösung</strong>. Raten ist nie nötig — die Antwort lässt sich stets durch Logik finden.',
+    how_h2: 'Spielanleitung', how_start_h3: 'Spiel starten',
+    how_start_p: 'Tippe auf die <strong>+</strong>-Schaltfläche oben links, um ein neues Spiel zu starten. Wähle eine Schwierigkeitsstufe und ein neues Rätsel wird sofort generiert.',
+    cap_difficulty: 'Schwierigkeit wählen', cap_empty: 'Neues Experten-Rätsel',
+    how_select_h3: 'Zelle auswählen und füllen',
+    how_select_p1: 'Tippe auf eine leere Zelle, um sie auszuwählen — sie wird blau. Die gesamte Zeile, Spalte und der 3×3-Block werden hervorgehoben, damit du siehst, welche Zahlen bereits gesetzt sind. Tippe dann auf eine Zahl im Zahlenfeld unten, um sie einzutragen.',
+    how_select_p2: 'Von dir eingegebene Zahlen erscheinen in <strong style="color:var(--accent)">blau</strong>. Vorausgefüllte Zahlen sind <strong>schwarz</strong>. Tippe erneut auf dieselbe Zahl, um sie zu löschen.',
+    cap_selected: 'Ausgewählte Zelle mit Hervorhebungen', cap_playing: 'Blau = deine Zahlen',
+    how_pad_h3: 'Zahlenfeld',
+    how_pad_p: 'Die Zifferntasten unten zeigen einen kleinen Zähler unter jeder Zahl, der angibt, wie oft diese Ziffer noch gesetzt werden muss. Wenn der Zähler 0 erreicht, wird die Taste ausgegraut — diese Ziffer ist vollständig.',
+    how_notes_h3: 'Bleistift / Notizen-Modus',
+    how_notes_p: 'Tippe auf <strong>Notizen</strong>, um in den Bleistift-Modus zu wechseln. In diesem Modus fügt das Tippen auf eine Ziffer sie als kleinen Kandidaten-Hinweis in die Zelle ein, anstatt sie einzutragen. Verwende Notizen, um zu verfolgen, welche Zahlen für eine Zelle noch möglich sind. Tippe erneut auf eine Notiz-Ziffer, um sie zu entfernen.',
+    cap_notes: 'Kandidaten-Notizen in einer Zelle',
+    features_h2: 'Funktionen', features_diff_h3: 'Schwierigkeitsgrade',
+    features_diff_p: 'Vier Stufen, jede erfordert zunehmend fortgeschrittenere Lösungstechniken:',
+    th_level: 'Stufe', th_technique: 'Benötigte Technik', th_for: 'Geeignet für',
+    badge_easy: 'Einfach', badge_medium: 'Mittel', badge_hard: 'Schwer', badge_expert: 'Experte',
+    diff_easy_tech: 'Nur Naked Singles', diff_easy_for: 'Anfänger — jede Zelle hat eine offensichtliche Antwort',
+    diff_med_tech: 'Hidden Singles', diff_med_for: 'Eine gleichmäßige, befriedigende Herausforderung',
+    diff_hard_tech: 'Naked Pairs', diff_hard_for: 'Erfahrene Spieler',
+    diff_exp_tech: 'Fortgeschrittene Logik', diff_exp_for: 'Die ultimative Herausforderung',
+    features_toolbar_h3: 'Werkzeugleiste',
+    ti_undo_name: 'Rückgängig', ti_undo_desc: 'Letzten Zug rückgängig machen',
+    ti_erase_name: 'Löschen', ti_erase_desc: 'Ausgewählte Zelle löschen',
+    ti_notes_name: 'Notizen', ti_notes_desc: 'Bleistift-/Kandidatenmodus umschalten',
+    ti_hint_name: 'Hinweis', ti_hint_desc: 'Schritt-für-Schritt-Erklärung für eine Zelle',
+    ti_redo_name: 'Wiederholen', ti_redo_desc: 'Rückgängig gemachten Zug wiederholen',
+    features_hints_h3: 'Hinweise',
+    features_hints_p: 'Tippe auf <strong>Hinweis</strong> und die App analysiert den aktuellen Spielstand und führt dich Schritt für Schritt durch das Lösen einer Zelle — mit derselben Logik, die ein menschlicher Löser verwenden würde (Naked Single, Hidden Single usw.). Du bestimmst, wie viele Schritte du aufdeckst. Wenn du bereit bist, tippe auf <strong>Auf dem Brett platzieren</strong>, um die Antwort anzuwenden.',
+    cap_hint: 'Schritt-für-Schritt-Hinweiserklärung',
+    features_colors_h3: 'Farbcodierung',
+    color_black_label: '<strong>Schwarz</strong> — vorausgefüllte Zahlen. Diese können nicht geändert werden.',
+    color_blue_label: '<strong>Blau</strong> — von dir eingegebene Zahlen (einschließlich platzierter Hinweise). Tippen zum Löschen.',
+    color_red_label: '<strong>Rot</strong> — ein falscher Eintrag (nur im Strikten Modus).',
+    color_blue_hl_label: '<strong>Blaue Hervorhebung</strong> — die ausgewählte Zelle und alle Zellen in derselben Zeile, Spalte oder im 3×3-Block.',
+    color_orange_hl_label: '<strong>Orange Hervorhebung</strong> — die Zelle, in der gerade ein Hinweis platziert wurde.',
+    features_settings_h3: 'Einstellungen',
+    features_settings_p: 'Tippe auf die <strong>⚙</strong>-Schaltfläche oben rechts, um die Einstellungen zu öffnen.',
+    strict_title: 'Strikter Modus',
+    strict_desc: 'Wenn aktiviert, werden falsche Einträge rot hervorgehoben und als Fehler gezählt. Drei Fehler beenden das Spiel. Wenn deaktiviert, werden falsche Zahlen stillschweigend akzeptiert — nur die endgültige Lösungsprüfung ist entscheidend.',
+    sound_title: 'Soundeffekte',
+    sound_desc: 'Audioreaktion für Zahleneingabe, Hinweise, Rückgängig/Wiederholen und Spielabschluss umschalten.',
+    lang_title: 'Sprache',
+    lang_desc: 'Die App ist auf Englisch, Deutsch, Slovenčina, Čeština, Español und 中文 verfügbar. Alle Texte, Hinweiserklärungen und Schwierigkeitsbeschreibungen sind vollständig übersetzt.',
+    cap_settings: 'Einstellungen', features_complete_h3: 'Rätsel abschließen',
+    features_complete_p: 'Fülle alle Zellen korrekt aus und das Brett sperrt sich, Konfetti fällt und eine Zusammenfassungskarte zeigt deine Zeit und Fehleranzahl. Tippe auf <strong>Neues Spiel</strong>, um direkt zur Schwierigkeitsauswahl zu springen.',
+    cap_complete: 'Rätsel gelöst!',
+    tips_h2: 'Tipps & Strategien',
+    tip_1: '<strong>Beginne mit den einfachsten Zellen.</strong> Suche nach Zeilen, Spalten oder Blöcken, die bereits 7–8 Zahlen enthalten — die verbleibende Zelle hat nur einen möglichen Wert.',
+    tip_2: '<strong>Scanne eine Zahl nach der anderen.</strong> Wähle eine Ziffer (z. B. 5) und markiere jede Zeile und Spalte, in der sie bereits vorkommt. Jeder Block, dem eine 5 fehlt, muss sie in der einzig verbleibenden gültigen Zelle platzieren.',
+    tip_3: '<strong>Verwende frühzeitig Bleistiftnotizen.</strong> Ab Mittel aufwärts schreibe Kandidatenzahlen in leere Zellen, wenn du Möglichkeiten ausschließt. Das macht Muster viel einfacher erkennbar.',
+    tip_4: '<strong>Suche nach Hidden Singles.</strong> Eine Ziffer, die in einer Zeile, Spalte oder einem Block nur in eine Zelle passt — auch wenn diese Zelle viele andere Kandidaten hat — wird Hidden Single genannt. Es ist die häufigste Technik auf Mittlerer Schwierigkeitsstufe.',
+    tip_5: '<strong>Naked Pairs beschleunigen das Lösen.</strong> Wenn zwei Zellen in derselben Zeile/Spalte/Block genau dieselben zwei Kandidaten haben, können diese zwei Zahlen aus allen anderen Zellen dieser Zeile/Spalte/Block eliminiert werden.',
+    tip_6: '<strong>Nutze Rückgängig frei.</strong> Fehler gemacht? Mache so oft rückgängig wie nötig — es gibt keine Strafe.',
+    tip_7: '<strong>Nutze Hinweise zum Lernen, nicht nur zum Abschließen.</strong> Das Schritt-für-Schritt-Hinweisblatt lehrt dich die genaue Technik, die für jede Zelle benötigt wird. Alle Schritte durchzulesen ist eine großartige Möglichkeit, deine Lösungsfähigkeiten zu verbessern.',
+    footer_privacy: 'Datenschutz', footer_contact: 'Kontakt',
+  },
+
+  sk: {
+    page_title: 'Sudoku – Ako hrať',
+    subtitle: 'Čisté, minimalistické Sudoku pre iPhone a iPad',
+    nav_rules: 'Pravidlá', nav_how: 'Ako hrať', nav_features: 'Funkcie',
+    nav_tips: 'Tipy', nav_privacy: 'Ochrana súkromia',
+    rules_h2: 'Pravidlá Sudoku',
+    rules_intro: 'Sudoku je logická hádanka na <strong>mriežke 9×9</strong> rozdelenej do deviatich <strong>blokov 3×3</strong>. Mriežka je na začiatku čiastočne vyplnená. Cieľom je vyplniť každú prázdnu bunku číslicou od 1 do 9 podľa troch jednoduchých pravidiel:',
+    rule_row_title: 'Každý riadok', rule_row_desc: 'musí obsahovať číslice 1–9 bez opakovania.',
+    rule_col_title: 'Každý stĺpec', rule_col_desc: 'musí obsahovať číslice 1–9 bez opakovania.',
+    rule_box_title: 'Každý blok 3×3', rule_box_desc: 'musí obsahovať číslice 1–9 bez opakovania.',
+    rules_unique: 'Každé platné Sudoku má <strong>práve jedno riešenie</strong>. Hádanie nie je nikdy potrebné — odpoveď sa dá vždy nájsť čistou logikou.',
+    how_h2: 'Ako hrať', how_start_h3: 'Začiatok hry',
+    how_start_p: 'Klepni na tlačidlo <strong>+</strong> v ľavom hornom rohu a začni novú hru. Vyber obtiažnosť a nová hádanka sa okamžite vygeneruje.',
+    cap_difficulty: 'Vyber obtiažnosť', cap_empty: 'Nová hádanka Expert',
+    how_select_h3: 'Výber a vyplnenie bunky',
+    how_select_p1: 'Klepni na prázdnu bunku, aby si ju vybral — zmodrá. Celý riadok, stĺpec a blok 3×3, kam patrí, sa zvýraznia, aby si videl, ktoré čísla sú už umiestnené. Potom klepni na číslo v numerickej klávesnici nižšie a vyplň ho.',
+    how_select_p2: 'Čísla, ktoré zadáš, sa zobrazia <strong style="color:var(--accent)">modrou</strong> farbou. Predvyplnené čísla sú <strong>čierne</strong>. Klepni znova na to isté číslo, aby si ho vymazal.',
+    cap_selected: 'Vybraná bunka so zvýraznením', cap_playing: 'Modrá = tvoje čísla',
+    how_pad_h3: 'Numerická klávesnica',
+    how_pad_p: 'Tlačidlá číslic dole zobrazujú malé počítadlo pod každou číslicou, ktoré ukazuje, koľkokrát ešte treba danú číslicu umiestniť. Keď počítadlo dosiahne 0, tlačidlo sa zošednie — táto číslica je hotová.',
+    how_notes_h3: 'Ceruzka / Poznámky',
+    how_notes_p: 'Klepni na tlačidlo <strong>Poznámky</strong> a prepni sa do režimu ceruzky. V tomto režime klepnutie na číslicu pridá malú poznámku kandidáta do bunky namiesto jej vyplnenia. Používaj poznámky na sledovanie, ktoré čísla sú pre bunku ešte možné. Klepnutím na zaznačenú číslicu ju odstraníš.',
+    cap_notes: 'Poznámky kandidátov v bunke',
+    features_h2: 'Funkcie', features_diff_h3: 'Úrovne obtiažnosti',
+    features_diff_p: 'Štyri úrovne, každá vyžaduje čoraz pokročilejšie techniky riešenia:',
+    th_level: 'Úroveň', th_technique: 'Požadovaná technika', th_for: 'Vhodné pre',
+    badge_easy: 'Ľahké', badge_medium: 'Stredné', badge_hard: 'Ťažké', badge_expert: 'Expert',
+    diff_easy_tech: 'Iba Naked Singles', diff_easy_for: 'Začiatočníci — každá bunka má jednoznačnú odpoveď',
+    diff_med_tech: 'Hidden Singles', diff_med_for: 'Plynulá, uspokojujúca výzva',
+    diff_hard_tech: 'Naked Pairs', diff_hard_for: 'Skúsení hráči',
+    diff_exp_tech: 'Pokročilá logika', diff_exp_for: 'Ultimátna výzva',
+    features_toolbar_h3: 'Panel nástrojov',
+    ti_undo_name: 'Späť', ti_undo_desc: 'Vrátiť posledný ťah',
+    ti_erase_name: 'Vymazať', ti_erase_desc: 'Vymazať vybranú bunku',
+    ti_notes_name: 'Poznámky', ti_notes_desc: 'Prepnúť režim ceruzky / kandidáta',
+    ti_hint_name: 'Nápoveda', ti_hint_desc: 'Postupné vysvetlenie pre jednu bunku',
+    ti_redo_name: 'Znova', ti_redo_desc: 'Zopakovať zrušený ťah',
+    features_hints_h3: 'Nápovedy',
+    features_hints_p: 'Klepni na <strong>Nápovedu</strong> a aplikácia analyzuje aktuálny stav dosky a prevedie ťa krok za krokom riešením jednej bunky — rovnakou logikou, akú by použil ľudský riešiteľ (Naked Single, Hidden Single atď.). Sám si určuješ, koľko krokov odhalíš. Keď budeš pripravený, klepni na <strong>Umiestniť na dosku</strong> a odpoveď sa aplikuje.',
+    cap_hint: 'Postupné vysvetlenie nápovedy',
+    features_colors_h3: 'Farebné označenie',
+    color_black_label: '<strong>Čierna</strong> — predvyplnené čísla. Tieto sa nedajú zmeniť.',
+    color_blue_label: '<strong>Modrá</strong> — čísla, ktoré si zadal (vrátane umiestnených nápovied). Klepnutím vymažeš.',
+    color_red_label: '<strong>Červená</strong> — nesprávny zápis (iba v Prísnom režime).',
+    color_blue_hl_label: '<strong>Modré zvýraznenie</strong> — vybraná bunka a všetky bunky zdieľajúce jej riadok, stĺpec alebo blok 3×3.',
+    color_orange_hl_label: '<strong>Oranžové zvýraznenie</strong> — bunka, kde bola práve umiestnená nápoveda.',
+    features_settings_h3: 'Nastavenia',
+    features_settings_p: 'Klepni na tlačidlo <strong>⚙</strong> v pravom hornom rohu a otvor Nastavenia.',
+    strict_title: 'Prísny režim',
+    strict_desc: 'Keď je zapnutý, nesprávne záznamy sú zvýraznené červenou a počítajú sa ako chyby. Tri chyby ukončia hru. Keď je vypnutý, nesprávne čísla sú akceptované potichu — rozhoduje iba záverečná kontrola riešenia.',
+    sound_title: 'Zvukové efekty',
+    sound_desc: 'Prepnúť zvukovú odozvu pre zadávanie čísel, nápovedy, späť/znova a udalosti ukončenia hry.',
+    lang_title: 'Jazyk',
+    lang_desc: 'Aplikácia je dostupná v angličtine, nemčine, slovenčine, češtine, španielčine a čínštine. Všetky texty, vysvetlenia nápovied a popisy obtiažnosti sú plne preložené.',
+    cap_settings: 'Nastavenia', features_complete_h3: 'Dokončenie hádanky',
+    features_complete_p: 'Vyplň správne všetky bunky a doska sa zablokuje, padajú konfety a zobrazí sa súhrnná karta s tvojím časom a celkovými chybami. Klepni na <strong>Nová hra</strong> a okamžite prejdeš na výber obtiažnosti.',
+    cap_complete: 'Hádanka vyriešená!',
+    tips_h2: 'Tipy a stratégie',
+    tip_1: '<strong>Začni s najjednoduchšími bunkami.</strong> Hľadaj riadky, stĺpce alebo bloky, v ktorých je už vyplnených 7–8 čísel — zostávajúca bunka má len jednu možnú hodnotu.',
+    tip_2: '<strong>Prehľadávaj jedno číslo naraz.</strong> Vyber číslicu (napr. 5) a označ každý riadok a stĺpec, kde sa už vyskytuje. Každý blok, v ktorom chýba 5, ju musí umiestniť do jedinej zostávajúcej platnej bunky.',
+    tip_3: '<strong>Používaj poznámky ceruzkou od začiatku.</strong> Na Strednej a vyššej úrovni zapisuj čísla kandidátov do prázdnych buniek, keď vylučuješ možnosti. Vzory sa tak oveľa ľahšie odhaľujú.',
+    tip_4: '<strong>Hľadaj Hidden Singles.</strong> Číslica, ktorá sa v riadku, stĺpci alebo bloku hodí iba do jednej bunky — aj keď má tá bunka mnoho iných kandidátov — sa nazýva Hidden Single. Je to najčastejšia technika na Strednej obtiažnosti.',
+    tip_5: '<strong>Naked Pairs urýchľujú riešenie.</strong> Ak dve bunky v rovnakom riadku/stĺpci/bloku majú presne rovnakých dvoch kandidátov, tieto dve čísla možno eliminovať zo všetkých ostatných buniek daného riadka/stĺpca/bloku.',
+    tip_6: '<strong>Používaj Späť slobodne.</strong> Urobil si chybu? Vráť sa späť toľkokrát, koľko potrebuješ — žiadna pokuta neexistuje.',
+    tip_7: '<strong>Používaj Nápovedy na učenie, nielen na dokončenie.</strong> Podrobný hárok s nápoveďami ťa naučí presnú techniku potrebnú pre každú bunku. Prečítanie všetkých krokov je skvelý spôsob, ako zlepšiť svoje riešiteľské schopnosti.',
+    footer_privacy: 'Ochrana súkromia', footer_contact: 'Kontakt',
+  },
+
+  cs: {
+    page_title: 'Sudoku – Jak hrát',
+    subtitle: 'Čisté, minimalistické Sudoku pro iPhone a iPad',
+    nav_rules: 'Pravidla', nav_how: 'Jak hrát', nav_features: 'Funkce',
+    nav_tips: 'Tipy', nav_privacy: 'Ochrana osobních údajů',
+    rules_h2: 'Pravidla Sudoku',
+    rules_intro: 'Sudoku je logická hádanka hraná na <strong>mřížce 9×9</strong> rozdělené do devíti <strong>bloků 3×3</strong>. Mřížka je zpočátku částečně vyplněna. Cílem je vyplnit každou prázdnou buňku číslicí od 1 do 9 podle tří jednoduchých pravidel:',
+    rule_row_title: 'Každý řádek', rule_row_desc: 'musí obsahovat číslice 1–9 bez opakování.',
+    rule_col_title: 'Každý sloupec', rule_col_desc: 'musí obsahovat číslice 1–9 bez opakování.',
+    rule_box_title: 'Každý blok 3×3', rule_box_desc: 'musí obsahovat číslice 1–9 bez opakování.',
+    rules_unique: 'Každé platné Sudoku má <strong>právě jedno řešení</strong>. Hádání není nikdy potřeba — odpověď lze vždy najít čistou logikou.',
+    how_h2: 'Jak hrát', how_start_h3: 'Začátek hry',
+    how_start_p: 'Klepni na tlačítko <strong>+</strong> v levém horním rohu a zahaj novou hru. Vyber obtížnost a nová hádanka se okamžitě vygeneruje.',
+    cap_difficulty: 'Vyber obtížnost', cap_empty: 'Nová hádanka Expert',
+    how_select_h3: 'Výběr a vyplnění buňky',
+    how_select_p1: 'Klepni na prázdnou buňku, aby ses ji vybral — zmodří. Celý řádek, sloupec a blok 3×3, kam patří, se zvýrazní, abys viděl, která čísla jsou již umístěna. Pak klepni na číslo v číselné klávesnici níže a vyplň ho.',
+    how_select_p2: 'Čísla, která zadáš, se zobrazí <strong style="color:var(--accent)">modře</strong>. Předvyplněná čísla jsou <strong>černá</strong>. Klepni znovu na stejné číslo, abys ho smazal.',
+    cap_selected: 'Vybraná buňka se zvýrazněním', cap_playing: 'Modrá = tvá čísla',
+    how_pad_h3: 'Číselná klávesnice',
+    how_pad_p: 'Tlačítka číslic dole zobrazují malý čítač pod každou číslicí, který ukazuje, kolikrát ještě musí být daná číslice umístěna. Když čítač dosáhne 0, tlačítko zešedne — tato číslice je hotova.',
+    how_notes_h3: 'Tužka / Poznámky',
+    how_notes_p: 'Klepni na tlačítko <strong>Poznámky</strong> a přepni se do režimu tužky. V tomto režimu klepnutí na číslici přidá malou poznámku kandidáta do buňky místo jejího vyplnění. Používej poznámky ke sledování, která čísla jsou pro buňku ještě možná. Klepnutím na zaznamenanou číslici ji odstraníš.',
+    cap_notes: 'Poznámky kandidátů v buňce',
+    features_h2: 'Funkce', features_diff_h3: 'Úrovně obtížnosti',
+    features_diff_p: 'Čtyři úrovně, každá vyžaduje stále pokročilejší techniky řešení:',
+    th_level: 'Úroveň', th_technique: 'Požadovaná technika', th_for: 'Vhodné pro',
+    badge_easy: 'Lehké', badge_medium: 'Střední', badge_hard: 'Těžké', badge_expert: 'Expert',
+    diff_easy_tech: 'Pouze Naked Singles', diff_easy_for: 'Začátečníci — každá buňka má jednoznačnou odpověď',
+    diff_med_tech: 'Hidden Singles', diff_med_for: 'Plynulá, uspokojivá výzva',
+    diff_hard_tech: 'Naked Pairs', diff_hard_for: 'Zkušení hráči',
+    diff_exp_tech: 'Pokročilá logika', diff_exp_for: 'Ultimátní výzva',
+    features_toolbar_h3: 'Panel nástrojů',
+    ti_undo_name: 'Zpět', ti_undo_desc: 'Vrátit poslední tah',
+    ti_erase_name: 'Smazat', ti_erase_desc: 'Smazat vybranou buňku',
+    ti_notes_name: 'Poznámky', ti_notes_desc: 'Přepnout režim tužky / kandidáta',
+    ti_hint_name: 'Nápověda', ti_hint_desc: 'Postupné vysvětlení pro jednu buňku',
+    ti_redo_name: 'Znovu', ti_redo_desc: 'Zopakovat zrušený tah',
+    features_hints_h3: 'Nápovědy',
+    features_hints_p: 'Klepni na <strong>Nápovědu</strong> a aplikace analyzuje aktuální stav desky a provede tě krok za krokem řešením jedné buňky — stejnou logikou, jakou by použil lidský řešitel (Naked Single, Hidden Single atd.). Sám určuješ, kolik kroků odkryješ. Když budeš připraven, klepni na <strong>Umístit na desku</strong> a odpověď se aplikuje.',
+    cap_hint: 'Postupné vysvětlení nápovědy',
+    features_colors_h3: 'Barevné označení',
+    color_black_label: '<strong>Černá</strong> — předvyplněná čísla. Tato nelze změnit.',
+    color_blue_label: '<strong>Modrá</strong> — čísla, která jsi zadal (včetně umístěných nápověd). Klepnutím smažeš.',
+    color_red_label: '<strong>Červená</strong> — nesprávný zápis (pouze v Přísném režimu).',
+    color_blue_hl_label: '<strong>Modré zvýraznění</strong> — vybraná buňka a všechny buňky sdílející její řádek, sloupec nebo blok 3×3.',
+    color_orange_hl_label: '<strong>Oranžové zvýraznění</strong> — buňka, kde byla právě umístěna nápověda.',
+    features_settings_h3: 'Nastavení',
+    features_settings_p: 'Klepni na tlačítko <strong>⚙</strong> v pravém horním rohu a otevři Nastavení.',
+    strict_title: 'Přísný režim',
+    strict_desc: 'Když je zapnut, nesprávné záznamy jsou zvýrazněny červeně a počítají se jako chyby. Tři chyby ukončí hru. Když je vypnut, nesprávná čísla jsou akceptována tiše — rozhoduje pouze závěrečná kontrola řešení.',
+    sound_title: 'Zvukové efekty',
+    sound_desc: 'Přepnout zvukovou odezvu pro zadávání čísel, nápovědy, zpět/znovu a události ukončení hry.',
+    lang_title: 'Jazyk',
+    lang_desc: 'Aplikace je dostupná v angličtině, němčině, slovenštině, češtině, španělštině a čínštině. Všechny texty, vysvětlení nápověd a popisy obtížnosti jsou plně přeloženy.',
+    cap_settings: 'Nastavení', features_complete_h3: 'Dokončení hádanky',
+    features_complete_p: 'Vyplň správně všechny buňky a deska se zablokuje, padá konfety a zobrazí se souhrnná karta s tvým časem a celkovými chybami. Klepni na <strong>Nová hra</strong> a okamžitě přejdeš na výběr obtížnosti.',
+    cap_complete: 'Hádanka vyřešena!',
+    tips_h2: 'Tipy a strategie',
+    tip_1: '<strong>Začni s nejjednoduššími buňkami.</strong> Hledej řádky, sloupce nebo bloky, které již mají vyplněno 7–8 čísel — zbývající buňka má pouze jednu možnou hodnotu.',
+    tip_2: '<strong>Procházej jedno číslo najednou.</strong> Vyber číslici (např. 5) a označ každý řádek a sloupec, kde se již vyskytuje. Každý blok, kde chybí 5, ji musí umístit do jediné zbývající platné buňky.',
+    tip_3: '<strong>Používej tužkové poznámky od začátku.</strong> Na Střední obtížnosti a výše zapisuj čísla kandidátů do prázdných buněk, když vylučuješ možnosti. Vzory se tak mnohem snadněji odhalují.',
+    tip_4: '<strong>Hledej Hidden Singles.</strong> Číslice, která se v řádku, sloupci nebo bloku hodí pouze do jedné buňky — i když má ta buňka mnoho jiných kandidátů — se nazývá Hidden Single. Je to nejčastější technika na Střední obtížnosti.',
+    tip_5: '<strong>Naked Pairs urychlují řešení.</strong> Pokud dvě buňky ve stejném řádku/sloupci/bloku mají přesně stejné dva kandidáty, tato dvě čísla lze eliminovat ze všech ostatních buněk daného řádku/sloupce/bloku.',
+    tip_6: '<strong>Používej Zpět volně.</strong> Udělal jsi chybu? Vrať se zpět tolikrát, kolikrát potřebuješ — žádná pokuta neexistuje.',
+    tip_7: '<strong>Používej Nápovědy k učení, nejen k dokončení.</strong> Podrobný list nápověd tě naučí přesnou techniku potřebnou pro každou buňku. Přečtení všech kroků je skvělý způsob, jak zlepšit své řešitelské schopnosti.',
+    footer_privacy: 'Ochrana osobních údajů', footer_contact: 'Kontakt',
+  },
+
+  es: {
+    page_title: 'Sudoku – Cómo jugar',
+    subtitle: 'Un Sudoku limpio y minimalista para iPhone e iPad',
+    nav_rules: 'Reglas', nav_how: 'Cómo jugar', nav_features: 'Funciones',
+    nav_tips: 'Consejos', nav_privacy: 'Privacidad',
+    rules_h2: 'Reglas del Sudoku',
+    rules_intro: 'El Sudoku es un puzzle lógico que se juega en una <strong>cuadrícula 9×9</strong> dividida en nueve <strong>cajas 3×3</strong>. La cuadrícula comienza parcialmente rellena. Tu objetivo es rellenar cada celda vacía con un dígito del 1 al 9 siguiendo tres reglas simples:',
+    rule_row_title: 'Cada fila', rule_row_desc: 'debe contener los dígitos 1–9 sin repetición.',
+    rule_col_title: 'Cada columna', rule_col_desc: 'debe contener los dígitos 1–9 sin repetición.',
+    rule_box_title: 'Cada caja 3×3', rule_box_desc: 'debe contener los dígitos 1–9 sin repetición.',
+    rules_unique: 'Todo puzzle de Sudoku válido tiene <strong>exactamente una solución</strong>. No es necesario adivinar nunca — la respuesta siempre se puede encontrar mediante lógica.',
+    how_h2: 'Cómo jugar', how_start_h3: 'Iniciar una partida',
+    how_start_p: 'Toca el botón <strong>+</strong> en la esquina superior izquierda para iniciar una nueva partida. Elige un nivel de dificultad y se genera un puzzle nuevo al instante.',
+    cap_difficulty: 'Elige tu dificultad', cap_empty: 'Puzzle Experto nuevo',
+    how_select_h3: 'Seleccionar y rellenar una celda',
+    how_select_p1: 'Toca cualquier celda vacía para seleccionarla — se vuelve azul. Toda la fila, columna y caja 3×3 a la que pertenece se resaltan para que puedas ver qué números ya están colocados. Luego toca un número en el teclado de abajo para rellenarla.',
+    how_select_p2: 'Los números que introduces aparecen en <strong style="color:var(--accent)">azul</strong>. Los números pre-rellenados son <strong>negros</strong>. Toca el mismo número de nuevo para borrar tu entrada.',
+    cap_selected: 'Celda seleccionada con resaltados', cap_playing: 'Azul = tus números',
+    how_pad_h3: 'Teclado numérico',
+    how_pad_p: 'Los botones de dígitos en la parte inferior muestran un pequeño contador debajo de cada número que indica cuántas veces más hay que colocar ese dígito. Cuando el contador llega a 0, el botón se atenúa — ese dígito está completo.',
+    how_notes_h3: 'Modo lápiz / Notas',
+    how_notes_p: 'Toca el botón <strong>Notas</strong> para cambiar al modo lápiz. En este modo, tocar un dígito lo añade como una pequeña nota candidata dentro de la celda en lugar de rellenarla. Usa las notas para rastrear qué números son aún posibles para una celda. Toca de nuevo un dígito anotado para eliminarlo.',
+    cap_notes: 'Notas candidatas en una celda',
+    features_h2: 'Funciones', features_diff_h3: 'Niveles de dificultad',
+    features_diff_p: 'Cuatro niveles, cada uno requiere técnicas de resolución progresivamente más avanzadas:',
+    th_level: 'Nivel', th_technique: 'Técnica requerida', th_for: 'Ideal para',
+    badge_easy: 'Fácil', badge_medium: 'Medio', badge_hard: 'Difícil', badge_expert: 'Experto',
+    diff_easy_tech: 'Solo Singles simples', diff_easy_for: 'Principiantes — cada celda tiene una respuesta obvia',
+    diff_med_tech: 'Singles ocultos', diff_med_for: 'Un reto constante y satisfactorio',
+    diff_hard_tech: 'Pares simples', diff_hard_for: 'Jugadores con experiencia',
+    diff_exp_tech: 'Lógica avanzada', diff_exp_for: 'El mayor reto',
+    features_toolbar_h3: 'Barra de herramientas',
+    ti_undo_name: 'Deshacer', ti_undo_desc: 'Revertir tu último movimiento',
+    ti_erase_name: 'Borrar', ti_erase_desc: 'Limpiar la celda seleccionada',
+    ti_notes_name: 'Notas', ti_notes_desc: 'Alternar modo lápiz / candidato',
+    ti_hint_name: 'Pista', ti_hint_desc: 'Explicación paso a paso para una celda',
+    ti_redo_name: 'Rehacer', ti_redo_desc: 'Rehacer un movimiento deshecho',
+    features_hints_h3: 'Pistas',
+    features_hints_p: 'Toca <strong>Pista</strong> y la app analiza el estado actual del tablero y te guía paso a paso para resolver una celda — usando la misma lógica que usaría un solucionador humano (Single simple, Single oculto, etc.). Tú controlas cuántos pasos revelar. Cuando estés listo, toca <strong>Colocar en el tablero</strong> para aplicar la respuesta.',
+    cap_hint: 'Explicación de pista paso a paso',
+    features_colors_h3: 'Código de colores',
+    color_black_label: '<strong>Negro</strong> — números dados pre-rellenados. No se pueden cambiar.',
+    color_blue_label: '<strong>Azul</strong> — números que has introducido (incluidas las pistas colocadas). Toca para borrar.',
+    color_red_label: '<strong>Rojo</strong> — una entrada incorrecta (solo en Modo estricto).',
+    color_blue_hl_label: '<strong>Resaltado azul</strong> — la celda seleccionada y todas las celdas que comparten su fila, columna o caja 3×3.',
+    color_orange_hl_label: '<strong>Resaltado naranja</strong> — la celda donde se acaba de colocar una pista.',
+    features_settings_h3: 'Ajustes',
+    features_settings_p: 'Toca el botón <strong>⚙</strong> en la esquina superior derecha para abrir los Ajustes.',
+    strict_title: 'Modo estricto',
+    strict_desc: 'Cuando está activado, las entradas incorrectas se resaltan en rojo y se cuentan como errores. Tres errores terminan la partida. Cuando está desactivado, los números incorrectos se aceptan en silencio — solo importa la comprobación final de la solución.',
+    sound_title: 'Efectos de sonido',
+    sound_desc: 'Alternar retroalimentación de audio para la introducción de números, pistas, deshacer/rehacer y eventos de fin de partida.',
+    lang_title: 'Idioma',
+    lang_desc: 'La app está disponible en inglés, alemán, eslovaco, checo, español y chino. Todo el texto de la interfaz, las explicaciones de pistas y las descripciones de dificultad están completamente traducidos.',
+    cap_settings: 'Ajustes', features_complete_h3: 'Completar un puzzle',
+    features_complete_p: 'Rellena todas las celdas correctamente y el tablero se bloquea, cae confeti y una tarjeta de resumen muestra tu tiempo y el total de errores. Toca <strong>Nueva partida</strong> para ir directamente al selector de dificultad.',
+    cap_complete: '¡Puzzle completado!',
+    tips_h2: 'Consejos y estrategias',
+    tip_1: '<strong>Empieza con las celdas más fáciles.</strong> Busca filas, columnas o cajas que ya tengan 7–8 números rellenados — la celda restante tiene solo un valor posible.',
+    tip_2: '<strong>Escanea un número a la vez.</strong> Elige un dígito (p.ej. 5) y marca cada fila y columna donde ya aparece. Cualquier caja que no tenga un 5 debe colocarlo en la única celda válida restante.',
+    tip_3: '<strong>Usa las notas a lápiz desde el principio.</strong> En Medio y superiores, escribe números candidatos en celdas vacías mientras eliminas posibilidades. Hace que los patrones sean mucho más fáciles de detectar.',
+    tip_4: '<strong>Busca Singles ocultos.</strong> Un dígito que solo puede ir en una celda de una fila, columna o caja — aunque esa celda tenga muchos otros candidatos — se llama Single oculto. Es la técnica más común en dificultad Media.',
+    tip_5: '<strong>Los Pares simples aceleran el proceso.</strong> Si dos celdas en la misma fila/columna/caja tienen exactamente los mismos dos candidatos, esos dos números pueden eliminarse de todas las demás celdas de esa fila/columna/caja.',
+    tip_6: '<strong>Usa Deshacer libremente.</strong> ¿Cometiste un error? Deshaz tantas veces como necesites — no hay penalización.',
+    tip_7: '<strong>Usa las Pistas para aprender, no solo para terminar.</strong> La hoja de pistas paso a paso te enseña la técnica exacta necesaria para cada celda. Leer todos los pasos es una excelente manera de mejorar tus habilidades de resolución.',
+    footer_privacy: 'Privacidad', footer_contact: 'Contacto',
+  },
+
+  zh: {
+    page_title: 'Sudoku – 玩法指南',
+    subtitle: '简洁、极简的数独 for iPhone 和 iPad',
+    nav_rules: '规则', nav_how: '玩法', nav_features: '功能',
+    nav_tips: '技巧', nav_privacy: '隐私政策',
+    rules_h2: '数独规则',
+    rules_intro: '数独是一款在<strong>9×9格</strong>上进行的逻辑谜题，分为九个<strong>3×3宫</strong>。初始时格子部分已填写。您的目标是按照三条简单规则，将每个空格填入1到9的数字：',
+    rule_row_title: '每行', rule_row_desc: '必须包含数字1–9，不得重复。',
+    rule_col_title: '每列', rule_col_desc: '必须包含数字1–9，不得重复。',
+    rule_box_title: '每个3×3宫', rule_box_desc: '必须包含数字1–9，不得重复。',
+    rules_unique: '每个有效的数独谜题<strong>恰好有一个解</strong>。无需猜测——答案始终可以通过逻辑推导得出。',
+    how_h2: '玩法说明', how_start_h3: '开始游戏',
+    how_start_p: '点击左上角的 <strong>+</strong> 按钮开始新游戏。选择难度级别，新谜题将立即生成。',
+    cap_difficulty: '选择难度', cap_empty: '全新专家谜题',
+    how_select_h3: '选择和填写格子',
+    how_select_p1: '点击任意空格将其选中——它会变为蓝色。所在的整行、整列及3×3宫都会高亮显示，帮助您查看已填写的数字。然后点击下方数字键盘上的数字进行填写。',
+    how_select_p2: '您输入的数字显示为<strong style="color:var(--accent)">蓝色</strong>。预填数字为<strong>黑色</strong>。再次点击相同数字可删除您的输入。',
+    cap_selected: '已选格子及高亮显示', cap_playing: '蓝色 = 您填写的数字',
+    how_pad_h3: '数字键盘',
+    how_pad_p: '底部数字按钮下方有小计数器，显示该数字还需填写的次数。计数器归零后按钮变灰——该数字已全部填完。',
+    how_notes_h3: '铅笔 / 笔记模式',
+    how_notes_p: '点击<strong>笔记</strong>按钮切换到铅笔模式。在此模式下，点击数字会将其作为小候选数字添加到格子中，而不是直接填入。用笔记追踪某个格子还有哪些可能的数字。再次点击已记录的数字可将其删除。',
+    cap_notes: '格子中的候选数字笔记',
+    features_h2: '功能介绍', features_diff_h3: '难度级别',
+    features_diff_p: '四个级别，每个级别需要逐步更高级的解题技巧：',
+    th_level: '级别', th_technique: '所需技巧', th_for: '适合人群',
+    badge_easy: '简单', badge_medium: '中等', badge_hard: '困难', badge_expert: '专家',
+    diff_easy_tech: '仅裸单元', diff_easy_for: '初学者——每个格子都有明显答案',
+    diff_med_tech: '隐藏单元', diff_med_for: '稳定而有满足感的挑战',
+    diff_hard_tech: '裸对', diff_hard_for: '有经验的玩家',
+    diff_exp_tech: '高级逻辑', diff_exp_for: '终极挑战',
+    features_toolbar_h3: '工具栏',
+    ti_undo_name: '撤销', ti_undo_desc: '撤销上一步操作',
+    ti_erase_name: '擦除', ti_erase_desc: '清除已选格子',
+    ti_notes_name: '笔记', ti_notes_desc: '切换铅笔/候选模式',
+    ti_hint_name: '提示', ti_hint_desc: '对一个格子的逐步说明',
+    ti_redo_name: '重做', ti_redo_desc: '重做已撤销的操作',
+    features_hints_h3: '提示功能',
+    features_hints_p: '点击<strong>提示</strong>，应用将分析当前棋盘状态，并逐步引导您解决一个格子——使用与人类解题者相同的逻辑（裸单元、隐藏单元等）。您可以控制揭示多少步骤。准备好后，点击<strong>填入格子</strong>即可应用答案。',
+    cap_hint: '逐步提示说明',
+    features_colors_h3: '颜色说明',
+    color_black_label: '<strong>黑色</strong>——预填的已知数字，不可更改。',
+    color_blue_label: '<strong>蓝色</strong>——您输入的数字（包括提示填写的数字），点击可删除。',
+    color_red_label: '<strong>红色</strong>——错误输入（仅在严格模式下）。',
+    color_blue_hl_label: '<strong>蓝色高亮</strong>——已选格子及共享其行、列或3×3宫的所有格子。',
+    color_orange_hl_label: '<strong>橙色高亮</strong>——刚刚放置提示的格子。',
+    features_settings_h3: '设置',
+    features_settings_p: '点击右上角的 <strong>⚙</strong> 按钮打开设置。',
+    strict_title: '严格模式',
+    strict_desc: '启用后，错误输入将以红色高亮显示并计为错误。三次错误将结束游戏。禁用时，错误数字被静默接受——只有最终解题检查才算数。',
+    sound_title: '音效',
+    sound_desc: '切换数字输入、提示、撤销/重做及游戏结束事件的音频反馈。',
+    lang_title: '语言',
+    lang_desc: '应用支持英语、德语、斯洛伐克语、捷克语、西班牙语和中文。所有界面文本、提示说明和难度描述均已完整翻译。',
+    cap_settings: '设置', features_complete_h3: '完成谜题',
+    features_complete_p: '正确填写所有格子后，棋盘锁定，彩纸飘落，摘要卡片显示您的时间和总错误数。点击<strong>新游戏</strong>直接进入难度选择。',
+    cap_complete: '谜题完成！',
+    tips_h2: '技巧与策略',
+    tip_1: '<strong>从最简单的格子开始。</strong>寻找已填写7–8个数字的行、列或宫——剩余格子只有一个可能值。',
+    tip_2: '<strong>一次扫描一个数字。</strong>选择一个数字（如5），标记每个已出现该数字的行和列。任何缺少5的宫必须在唯一剩余的有效格子中放置它。',
+    tip_3: '<strong>尽早使用铅笔笔记。</strong>在中等及以上难度，在消除可能性时将候选数字写入空格。这使得规律更容易发现。',
+    tip_4: '<strong>寻找隐藏单元。</strong>在某行、列或宫中只能放入一个格子的数字——即使该格子有许多其他候选数字——称为隐藏单元。这是中等难度最常见的技巧。',
+    tip_5: '<strong>裸对可加速解题。</strong>如果同一行/列/宫中的两个格子恰好有相同的两个候选数字，这两个数字可以从该行/列/宫的所有其他格子中排除。',
+    tip_6: '<strong>自由使用撤销。</strong>犯了错误？随时撤销多次——没有任何惩罚。',
+    tip_7: '<strong>用提示学习，而不只是完成游戏。</strong>逐步提示表教您每个格子所需的确切技巧。通读所有步骤是提升解题能力的好方法。',
+    footer_privacy: '隐私政策', footer_contact: '联系我们',
+  },
+};
+
+const LANG_KEY = 'sudoku-lang';
+
+function applyLang(lang) {
+  const t = i18n[lang] || i18n.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = t[el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+  if (t.page_title) document.title = t.page_title;
+  localStorage.setItem(LANG_KEY, lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn =>
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
+
+(function init() {
+  const saved = localStorage.getItem(LANG_KEY);
+  const browser = (navigator.language || 'en').split('-')[0];
+  const supported = Object.keys(i18n);
+  const lang = supported.includes(saved) ? saved
+             : supported.includes(browser) ? browser : 'en';
+  applyLang(lang);
+})();
+</script>
 </body>
 </html>
