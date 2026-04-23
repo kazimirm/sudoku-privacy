@@ -359,12 +359,26 @@
     </div>
     <div class="card">
       <h3 data-i18n="lang_title">Language</h3>
-      <p data-i18n="lang_desc">The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated.</p>
+      <p data-i18n="lang_desc">The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated. Language selection appears at the bottom of the Settings screen.</p>
     </div>
-    <figure class="screenshot-item" style="margin-top:20px; max-width:200px;">
-      <img src="screenshots/settings.png" alt="Settings screen" />
-      <figcaption data-i18n="cap_settings">Settings</figcaption>
-    </figure>
+    <div class="card">
+      <h3 data-i18n="stats_title">Statistics</h3>
+      <p data-i18n="stats_desc">Track your progress per difficulty level. Tap Statistics inside Settings to view games completed, best time, and average time for each of the four difficulty levels.</p>
+    </div>
+    <div class="card">
+      <h3 data-i18n="guide_title">Game Guide</h3>
+      <p data-i18n-html="guide_desc">Tap <strong>Game Guide</strong> in Settings to open this guide in your browser at any time.</p>
+    </div>
+    <div class="screenshot-pair" style="margin-top:20px;">
+      <figure class="screenshot-item">
+        <img src="screenshots/settings.png" alt="Settings screen" />
+        <figcaption data-i18n="cap_settings">Settings</figcaption>
+      </figure>
+      <figure class="screenshot-item">
+        <img src="screenshots/statistics.png" alt="Statistics screen" />
+        <figcaption data-i18n="cap_statistics">Statistics</figcaption>
+      </figure>
+    </div>
 
     <h3 data-i18n="features_complete_h3">Completing a puzzle</h3>
     <p data-i18n-html="features_complete_p">Fill every cell correctly and the board locks, confetti falls, and a summary card shows your time and total mistakes. Tap <strong>New Game</strong> to jump straight into the difficulty picker.</p>
@@ -453,8 +467,12 @@ const i18n = {
     timer_title: 'Hide Timer',
     timer_desc: 'When enabled, the elapsed-time counter is hidden during gameplay. Useful if you prefer to play without time pressure.',
     lang_title: 'Language',
-    lang_desc: 'The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated.',
-    cap_settings: 'Settings', features_complete_h3: 'Completing a puzzle',
+    lang_desc: 'The app is available in English, Deutsch, Slovenčina, Čeština, Español, and 中文. All UI text, hint explanations, and difficulty descriptions are fully translated. Language selection appears at the bottom of the Settings screen.',
+    stats_title: 'Statistics',
+    stats_desc: 'Track your progress per difficulty level. Tap Statistics inside Settings to view games completed, best time, and average time for each of the four difficulty levels.',
+    guide_title: 'Game Guide',
+    guide_desc: 'Tap <strong>Game Guide</strong> in Settings to open this guide in your browser at any time.',
+    cap_settings: 'Settings', cap_statistics: 'Statistics', features_complete_h3: 'Completing a puzzle',
     features_complete_p: 'Fill every cell correctly and the board locks, confetti falls, and a summary card shows your time and total mistakes. Tap <strong>New Game</strong> to jump straight into the difficulty picker.',
     cap_complete: 'Puzzle complete!',
     tips_h2: 'Tips & Strategies',
@@ -523,8 +541,12 @@ const i18n = {
     timer_title: 'Timer ausblenden',
     timer_desc: 'Wenn aktiviert, wird der Zeitanzeiger während des Spiels ausgeblendet. Nützlich, wenn du ohne Zeitdruck spielen möchtest.',
     lang_title: 'Sprache',
-    lang_desc: 'Die App ist auf Englisch, Deutsch, Slovenčina, Čeština, Español und 中文 verfügbar. Alle Texte, Hinweiserklärungen und Schwierigkeitsbeschreibungen sind vollständig übersetzt.',
-    cap_settings: 'Einstellungen', features_complete_h3: 'Rätsel abschließen',
+    lang_desc: 'Die App ist auf Englisch, Deutsch, Slovenčina, Čeština, Español und 中文 verfügbar. Alle Texte, Hinweiserklärungen und Schwierigkeitsbeschreibungen sind vollständig übersetzt. Die Sprachauswahl befindet sich am Ende der Einstellungen.',
+    stats_title: 'Statistiken',
+    stats_desc: 'Verfolge deinen Fortschritt pro Schwierigkeitsstufe. Tippe in den Einstellungen auf Statistiken, um abgeschlossene Spiele, Bestzeit und Durchschnittszeit für alle vier Stufen zu sehen.',
+    guide_title: 'Spielanleitung',
+    guide_desc: 'Tippe in den Einstellungen auf <strong>Spielanleitung</strong>, um diesen Leitfaden jederzeit im Browser zu öffnen.',
+    cap_settings: 'Einstellungen', cap_statistics: 'Statistiken', features_complete_h3: 'Rätsel abschließen',
     features_complete_p: 'Fülle alle Zellen korrekt aus und das Brett sperrt sich, Konfetti fällt und eine Zusammenfassungskarte zeigt deine Zeit und Fehleranzahl. Tippe auf <strong>Neues Spiel</strong>, um direkt zur Schwierigkeitsauswahl zu springen.',
     cap_complete: 'Rätsel gelöst!',
     tips_h2: 'Tipps & Strategien',
@@ -550,8 +572,8 @@ const i18n = {
     rule_box_title: 'Každý blok 3×3', rule_box_desc: 'musí obsahovať číslice 1–9 bez opakovania.',
     rules_unique: 'Každé platné Sudoku má <strong>práve jedno riešenie</strong>. Hádanie nie je nikdy potrebné — odpoveď sa dá vždy nájsť čistou logikou.',
     how_h2: 'Ako hrať', how_start_h3: 'Začiatok hry',
-    how_start_p: 'Klepni na tlačidlo <strong>+</strong> v ľavom hornom rohu a začni novú hru. Vyber obtiažnosť a nová hádanka sa okamžite vygeneruje.',
-    cap_difficulty: 'Vyber obtiažnosť', cap_empty: 'Nová hádanka Expert',
+    how_start_p: 'Klepni na tlačidlo <strong>+</strong> v ľavom hornom rohu a začni novú hru. Vyber obtiažnosť a nové sudoku sa okamžite vygeneruje.',
+    cap_difficulty: 'Vyber obtiažnosť', cap_empty: 'Nové sudoku Expert',
     how_select_h3: 'Výber a vyplnenie bunky',
     how_select_p1: 'Klepni na prázdnu bunku, aby si ju vybral — zmodrá. Celý riadok, stĺpec a blok 3×3, kam patrí, sa zvýraznia, aby si videl, ktoré čísla sú už umiestnené. Potom klepni na číslo v numerickej klávesnici nižšie a vyplň ho.',
     how_select_p2: 'Čísla, ktoré zadáš, sa zobrazia <strong style="color:var(--accent)">modrou</strong> farbou. Predvyplnené čísla sú <strong>čierne</strong>. Klepni znova na to isté číslo, aby si ho vymazal.',
@@ -593,10 +615,14 @@ const i18n = {
     timer_title: 'Skryť časomieru',
     timer_desc: 'Keď je zapnuté, počítadlo uplynulého času je počas hry skryté. Užitočné, ak chceš hrať bez časového tlaku.',
     lang_title: 'Jazyk',
-    lang_desc: 'Aplikácia je dostupná v angličtine, nemčine, slovenčine, češtine, španielčine a čínštine. Všetky texty, vysvetlenia nápovied a popisy obtiažnosti sú plne preložené.',
-    cap_settings: 'Nastavenia', features_complete_h3: 'Dokončenie hádanky',
+    lang_desc: 'Aplikácia je dostupná v angličtine, nemčine, slovenčine, češtine, španielčine a čínštine. Všetky texty, vysvetlenia nápovied a popisy obtiažnosti sú plne preložené. Výber jazyka sa nachádza v spodnej časti Nastavení.',
+    stats_title: 'Štatistiky',
+    stats_desc: 'Sleduj svoj pokrok podľa obtiažnosti. Klepni na Štatistiky v Nastaveniach a zobraz si dokončené hry, najlepší čas a priemerný čas pre každú z štyroch úrovní.',
+    guide_title: 'Sprievodca hrou',
+    guide_desc: 'Klepni na <strong>Sprievodca hrou</strong> v Nastaveniach a kedykoľvek otvor tohto sprievodcu v prehliadači.',
+    cap_settings: 'Nastavenia', cap_statistics: 'Štatistiky', features_complete_h3: 'Dokončenie hádanky',
     features_complete_p: 'Vyplň správne všetky bunky a doska sa zablokuje, padajú konfety a zobrazí sa súhrnná karta s tvojím časom a celkovými chybami. Klepni na <strong>Nová hra</strong> a okamžite prejdeš na výber obtiažnosti.',
-    cap_complete: 'Hádanka vyriešená!',
+    cap_complete: 'Sudoku vyriešené!',
     tips_h2: 'Tipy a stratégie',
     tip_1: '<strong>Začni s najjednoduchšími bunkami.</strong> Hľadaj riadky, stĺpce alebo bloky, v ktorých je už vyplnených 7–8 čísel — zostávajúca bunka má len jednu možnú hodnotu.',
     tip_2: '<strong>Prehľadávaj jedno číslo naraz.</strong> Vyber číslicu (napr. 5) a označ každý riadok a stĺpec, kde sa už vyskytuje. Každý blok, v ktorom chýba 5, ju musí umiestniť do jedinej zostávajúcej platnej bunky.',
@@ -663,10 +689,14 @@ const i18n = {
     timer_title: 'Skrýt časovač',
     timer_desc: 'Když je zapnuto, počítadlo uplynulého času je během hry skryto. Užitečné, pokud chceš hrát bez časového tlaku.',
     lang_title: 'Jazyk',
-    lang_desc: 'Aplikace je dostupná v angličtině, němčině, slovenštině, češtině, španělštině a čínštině. Všechny texty, vysvětlení nápověd a popisy obtížnosti jsou plně přeloženy.',
-    cap_settings: 'Nastavení', features_complete_h3: 'Dokončení hádanky',
+    lang_desc: 'Aplikace je dostupná v angličtině, němčině, slovenštině, češtině, španělštině a čínštině. Všechny texty, vysvětlení nápověd a popisy obtížnosti jsou plně přeloženy. Výběr jazyka se nachází v dolní části Nastavení.',
+    stats_title: 'Statistiky',
+    stats_desc: 'Sleduj svůj pokrok podle obtížnosti. Klepni na Statistiky v Nastavení a zobraz si dokončené hry, nejlepší čas a průměrný čas pro každou ze čtyř úrovní.',
+    guide_title: 'Průvodce hrou',
+    guide_desc: 'Klepni na <strong>Průvodce hrou</strong> v Nastavení a kdykoli otevři tohoto průvodce v prohlížeči.',
+    cap_settings: 'Nastavení', cap_statistics: 'Statistiky', features_complete_h3: 'Dokončení hádanky',
     features_complete_p: 'Vyplň správně všechny buňky a deska se zablokuje, padá konfety a zobrazí se souhrnná karta s tvým časem a celkovými chybami. Klepni na <strong>Nová hra</strong> a okamžitě přejdeš na výběr obtížnosti.',
-    cap_complete: 'Hádanka vyřešena!',
+    cap_complete: 'Sudoku vyřešeno!',
     tips_h2: 'Tipy a strategie',
     tip_1: '<strong>Začni s nejjednoduššími buňkami.</strong> Hledej řádky, sloupce nebo bloky, které již mají vyplněno 7–8 čísel — zbývající buňka má pouze jednu možnou hodnotu.',
     tip_2: '<strong>Procházej jedno číslo najednou.</strong> Vyber číslici (např. 5) a označ každý řádek a sloupec, kde se již vyskytuje. Každý blok, kde chybí 5, ji musí umístit do jediné zbývající platné buňky.',
@@ -733,8 +763,12 @@ const i18n = {
     timer_title: 'Ocultar temporizador',
     timer_desc: 'Cuando está activado, el contador de tiempo transcurrido se oculta durante la partida. Útil si prefieres jugar sin presión de tiempo.',
     lang_title: 'Idioma',
-    lang_desc: 'La app está disponible en inglés, alemán, eslovaco, checo, español y chino. Todo el texto de la interfaz, las explicaciones de pistas y las descripciones de dificultad están completamente traducidos.',
-    cap_settings: 'Ajustes', features_complete_h3: 'Completar un puzzle',
+    lang_desc: 'La app está disponible en inglés, alemán, eslovaco, checo, español y chino. Todo el texto de la interfaz, las explicaciones de pistas y las descripciones de dificultad están completamente traducidos. La selección de idioma aparece al final de la pantalla de Ajustes.',
+    stats_title: 'Estadísticas',
+    stats_desc: 'Sigue tu progreso por nivel de dificultad. Toca Estadísticas en Ajustes para ver partidas completadas, mejor tiempo y tiempo medio para cada uno de los cuatro niveles.',
+    guide_title: 'Guía del juego',
+    guide_desc: 'Toca <strong>Guía del juego</strong> en Ajustes para abrir esta guía en tu navegador en cualquier momento.',
+    cap_settings: 'Ajustes', cap_statistics: 'Estadísticas', features_complete_h3: 'Completar un puzzle',
     features_complete_p: 'Rellena todas las celdas correctamente y el tablero se bloquea, cae confeti y una tarjeta de resumen muestra tu tiempo y el total de errores. Toca <strong>Nueva partida</strong> para ir directamente al selector de dificultad.',
     cap_complete: '¡Puzzle completado!',
     tips_h2: 'Consejos y estrategias',
@@ -803,8 +837,12 @@ const i18n = {
     timer_title: '隐藏计时器',
     timer_desc: '启用后，游戏过程中将隐藏已用时间计数器。适合不想感受时间压力的玩家。',
     lang_title: '语言',
-    lang_desc: '应用支持英语、德语、斯洛伐克语、捷克语、西班牙语和中文。所有界面文本、提示说明和难度描述均已完整翻译。',
-    cap_settings: '设置', features_complete_h3: '完成谜题',
+    lang_desc: '应用支持英语、德语、斯洛伐克语、捷克语、西班牙语和中文。所有界面文本、提示说明和难度描述均已完整翻译。语言选择位于设置页面底部。',
+    stats_title: '统计',
+    stats_desc: '按难度追踪您的进度。在设置中点击统计，查看四个难度级别各自的完成场数、最佳时间和平均时间。',
+    guide_title: '游戏指南',
+    guide_desc: '在设置中点击<strong>游戏指南</strong>，随时在浏览器中打开本指南。',
+    cap_settings: '设置', cap_statistics: '统计', features_complete_h3: '完成谜题',
     features_complete_p: '正确填写所有格子后，棋盘锁定，彩纸飘落，摘要卡片显示您的时间和总错误数。点击<strong>新游戏</strong>直接进入难度选择。',
     cap_complete: '谜题完成！',
     tips_h2: '技巧与策略',
