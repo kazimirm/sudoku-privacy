@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku – Privacy Policy</title>
+  <style>
+    :root {
+      --accent: #4A90E2;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --secondary: #6e6e73;
+      --border: #e0e0e5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px 28px;
+      text-align: center;
+    }
+    header img.icon {
+      width: 96px; height: 96px;
+      border-radius: 22%;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.5px; }
+    header p.subtitle { color: var(--secondary); margin-top: 6px; font-size: 1.05rem; }
+    .lang-picker {
+      display: flex; justify-content: center;
+      gap: 6px; flex-wrap: wrap; margin-top: 18px;
+    }
+    .lang-btn {
+      background: none; border: 1px solid var(--border);
+      border-radius: 8px; padding: 5px 10px;
+      font-size: .82rem; cursor: pointer;
+      color: var(--secondary); transition: all .15s;
+      font-family: inherit;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    nav a {
+      font-size: .85rem; color: var(--accent);
+      text-decoration: none; padding: 5px 14px;
+      border: 1px solid var(--accent); border-radius: 20px;
+      transition: background .15s, color .15s;
+    }
+    nav a:hover { background: var(--accent); color: #fff; }
+    main { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+    h2 {
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: -.3px; margin-bottom: 6px;
+    }
+    .last-updated { color: var(--secondary); font-size: .9rem; margin-bottom: 22px; }
+    p { margin-bottom: 14px; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 26px 0 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: .93rem; }
+    th { font-weight: 600; color: var(--secondary); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+    td:last-child { color: var(--secondary); }
+    .contact-email {
+      display: inline-block; margin-top: 4px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 16px;
+      font-weight: 600; color: var(--accent);
+      text-decoration: none; font-size: .95rem;
+    }
+    footer {
+      text-align: center; padding: 24px;
+      font-size: .82rem; color: var(--secondary);
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="icon" src="icon.png" alt="Sudoku App Icon" />
+  <h1>Sudoku</h1>
+  <p class="subtitle" data-i18n="subtitle">A clean, minimal Sudoku for iPhone and iPad</p>
+  <div class="lang-picker">
+    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+    <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+    <button class="lang-btn" data-lang="sk">🇸🇰 SK</button>
+    <button class="lang-btn" data-lang="cs">🇨🇿 CS</button>
+    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+    <button class="lang-btn" data-lang="zh">🇨🇳 ZH</button>
+  </div>
+  <nav>
+    <a href="guide.html" data-i18n="nav_guide">📖 How to Play &amp; Game Guide</a>
+  </nav>
+</header>
+
+<main>
+  <h2 data-i18n="h2_privacy">Privacy Policy</h2>
+  <p class="last-updated" data-i18n="last_updated">Last updated: April 19, 2026</p>
+
+  <p><strong data-i18n="intro">Sudoku does not collect, store, transmit, or share any personal data.</strong></p>
+  <p data-i18n="body">The app functions entirely on-device. No analytics, tracking, advertising, or third-party SDKs are used.</p>
+
+  <h3 data-i18n="h3_stored">What is stored</h3>
+  <p data-i18n-html="stored_desc">Game preferences (difficulty, sound, strict mode) are stored <strong>locally on your device</strong> using iOS standard storage (UserDefaults) and are never sent anywhere.</p>
+
+  <h3 data-i18n="h3_not">What is not collected</h3>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="th_data">Data</th>
+        <th data-i18n="th_collected">Collected</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td data-i18n="row_personal">Personal information</td><td>✗</td></tr>
+      <tr><td data-i18n="row_location">Location</td><td>✗</td></tr>
+      <tr><td data-i18n="row_analytics">Usage analytics</td><td>✗</td></tr>
+      <tr><td data-i18n="row_crash">Crash reports</td><td>✗</td></tr>
+      <tr><td data-i18n="row_adid">Advertising identifiers</td><td>✗</td></tr>
+      <tr><td data-i18n="row_network">Any network requests</td><td>✗</td></tr>
+    </tbody>
+  </table>
+
+  <h3 data-i18n="h3_contact">Contact</h3>
+  <p data-i18n="contact_desc">If you have any questions about this policy, contact:</p>
+  <a class="contact-email" href="mailto:kazimir.majo@gmail.com">kazimir.majo@gmail.com</a>
+</main>
+
+<footer>
+  © 2026 Marián Kažimír ·
+  <a href="guide.html" data-i18n="footer_guide">📖 How to Play</a> ·
+  <a href="mailto:kazimir.majo@gmail.com" data-i18n="footer_contact">Contact</a>
+</footer>
+
+<script>
+const i18n = {
+  en: {
+    subtitle:      'A clean, minimal Sudoku for iPhone and iPad',
+    nav_guide:     '📖 How to Play & Game Guide',
+    h2_privacy:    'Privacy Policy',
+    last_updated:  'Last updated: April 19, 2026',
+    intro:         'Sudoku does not collect, store, transmit, or share any personal data.',
+    body:          'The app functions entirely on-device. No analytics, tracking, advertising, or third-party SDKs are used.',
+    h3_stored:     'What is stored',
+    stored_desc:   'Game preferences (difficulty, sound, strict mode) are stored <strong>locally on your device</strong> using iOS standard storage (UserDefaults) and are never sent anywhere.',
+    h3_not:        'What is not collected',
+    th_data:       'Data',
+    th_collected:  'Collected',
+    row_personal:  'Personal information',
+    row_location:  'Location',
+    row_analytics: 'Usage analytics',
+    row_crash:     'Crash reports',
+    row_adid:      'Advertising identifiers',
+    row_network:   'Any network requests',
+    h3_contact:    'Contact',
+    contact_desc:  'If you have any questions about this policy, contact:',
+    footer_guide:  '📖 How to Play',
+    footer_contact:'Contact',
+    page_title:    'Sudoku – Privacy Policy',
+  },
+  de: {
+    subtitle:      'Ein klares, minimales Sudoku für iPhone und iPad',
+    nav_guide:     '📖 Spielanleitung & Leitfaden',
+    h2_privacy:    'Datenschutzrichtlinie',
+    last_updated:  'Zuletzt aktualisiert: 19. April 2026',
+    intro:         'Sudoku erfasst, speichert, überträgt oder teilt keinerlei personenbezogene Daten.',
+    body:          'Die App funktioniert vollständig auf dem Gerät. Es werden keine Analysen, Tracking, Werbung oder Drittanbieter-SDKs verwendet.',
+    h3_stored:     'Was gespeichert wird',
+    stored_desc:   'Spieleinstellungen (Schwierigkeit, Ton, Strikter Modus) werden <strong>lokal auf Ihrem Gerät</strong> über den iOS-Standardspeicher (UserDefaults) gespeichert und niemals weitergegeben.',
+    h3_not:        'Was nicht erfasst wird',
+    th_data:       'Daten',
+    th_collected:  'Erfasst',
+    row_personal:  'Personenbezogene Daten',
+    row_location:  'Standort',
+    row_analytics: 'Nutzungsanalysen',
+    row_crash:     'Absturzberichte',
+    row_adid:      'Werbekennungen',
+    row_network:   'Netzwerkanfragen',
+    h3_contact:    'Kontakt',
+    contact_desc:  'Bei Fragen zu dieser Richtlinie wenden Sie sich an:',
+    footer_guide:  '📖 Spielanleitung',
+    footer_contact:'Kontakt',
+    page_title:    'Sudoku – Datenschutzrichtlinie',
+  },
+  sk: {
+    subtitle:      'Čisté, minimalistické Sudoku pre iPhone a iPad',
+    nav_guide:     '📖 Ako hrať & Príručka',
+    h2_privacy:    'Zásady ochrany súkromia',
+    last_updated:  'Naposledy aktualizované: 19. apríla 2026',
+    intro:         'Sudoku nezbiera, neukladá, neodosiela ani nezdieľa žiadne osobné údaje.',
+    body:          'Aplikácia funguje výlučne na zariadení. Nepoužívajú sa žiadne analytické nástroje, sledovanie, reklamy ani SDK tretích strán.',
+    h3_stored:     'Čo sa ukladá',
+    stored_desc:   'Herné nastavenia (obtiažnosť, zvuk, prísny režim) sú uložené <strong>lokálne na vašom zariadení</strong> pomocou štandardného úložiska iOS (UserDefaults) a nikdy sa nikam neodosielajú.',
+    h3_not:        'Čo sa nezbiera',
+    th_data:       'Údaje',
+    th_collected:  'Zbierané',
+    row_personal:  'Osobné informácie',
+    row_location:  'Poloha',
+    row_analytics: 'Analytika používania',
+    row_crash:     'Správy o páde',
+    row_adid:      'Reklamné identifikátory',
+    row_network:   'Sieťové požiadavky',
+    h3_contact:    'Kontakt',
+    contact_desc:  'Ak máte otázky týkajúce sa týchto zásad, kontaktujte:',
+    footer_guide:  '📖 Ako hrať',
+    footer_contact:'Kontakt',
+    page_title:    'Sudoku – Zásady ochrany súkromia',
+  },
+  cs: {
+    subtitle:      'Čisté, minimalistické Sudoku pro iPhone a iPad',
+    nav_guide:     '📖 Jak hrát & Průvodce',
+    h2_privacy:    'Zásady ochrany osobních údajů',
+    last_updated:  'Naposledy aktualizováno: 19. dubna 2026',
+    intro:         'Sudoku neshromažďuje, neukládá, nepřenáší ani nesdílí žádné osobní údaje.',
+    body:          'Aplikace funguje výhradně na zařízení. Nepoužívají se žádné analytické nástroje, sledování, reklamy ani SDK třetích stran.',
+    h3_stored:     'Co se ukládá',
+    stored_desc:   'Herní nastavení (obtížnost, zvuk, přísný režim) jsou uložena <strong>lokálně na vašem zařízení</strong> pomocí standardního úložiště iOS (UserDefaults) a nikdy nejsou nikam odesílána.',
+    h3_not:        'Co se neshromažďuje',
+    th_data:       'Data',
+    th_collected:  'Shromažďována',
+    row_personal:  'Osobní informace',
+    row_location:  'Poloha',
+    row_analytics: 'Analytika použití',
+    row_crash:     'Zprávy o pádu',
+    row_adid:      'Reklamní identifikátory',
+    row_network:   'Síťové požadavky',
+    h3_contact:    'Kontakt',
+    contact_desc:  'Máte-li dotazy k těmto zásadám, obraťte se na:',
+    footer_guide:  '📖 Jak hrát',
+    footer_contact:'Kontakt',
+    page_title:    'Sudoku – Zásady ochrany osobních údajů',
+  },
+  es: {
+    subtitle:      'Un Sudoku limpio y minimalista para iPhone e iPad',
+    nav_guide:     '📖 Cómo jugar & Guía',
+    h2_privacy:    'Política de privacidad',
+    last_updated:  'Última actualización: 19 de abril de 2026',
+    intro:         'Sudoku no recopila, almacena, transmite ni comparte ningún dato personal.',
+    body:          'La aplicación funciona completamente en el dispositivo. No se utilizan análisis, rastreo, publicidad ni SDK de terceros.',
+    h3_stored:     'Qué se almacena',
+    stored_desc:   'Las preferencias del juego (dificultad, sonido, modo estricto) se almacenan <strong>localmente en tu dispositivo</strong> mediante el almacenamiento estándar de iOS (UserDefaults) y nunca se envían a ningún lugar.',
+    h3_not:        'Qué no se recopila',
+    th_data:       'Dato',
+    th_collected:  'Recopilado',
+    row_personal:  'Información personal',
+    row_location:  'Ubicación',
+    row_analytics: 'Análisis de uso',
+    row_crash:     'Informes de fallos',
+    row_adid:      'Identificadores publicitarios',
+    row_network:   'Solicitudes de red',
+    h3_contact:    'Contacto',
+    contact_desc:  'Si tienes alguna pregunta sobre esta política, contacta con:',
+    footer_guide:  '📖 Cómo jugar',
+    footer_contact:'Contacto',
+    page_title:    'Sudoku – Política de privacidad',
+  },
+  zh: {
+    subtitle:      '简洁、极简的数独 for iPhone 和 iPad',
+    nav_guide:     '📖 玩法说明 & 游戏指南',
+    h2_privacy:    '隐私政策',
+    last_updated:  '最后更新：2026年4月19日',
+    intro:         'Sudoku不收集、存储、传输或分享任何个人数据。',
+    body:          '该应用完全在设备上运行，不使用任何分析、跟踪、广告或第三方SDK。',
+    h3_stored:     '存储内容',
+    stored_desc:   '游戏偏好（难度、声音、严格模式）使用iOS标准存储（UserDefaults）<strong>本地保存在您的设备上</strong>，从不发送到任何地方。',
+    h3_not:        '不收集的内容',
+    th_data:       '数据类型',
+    th_collected:  '是否收集',
+    row_personal:  '个人信息',
+    row_location:  '位置信息',
+    row_analytics: '使用分析',
+    row_crash:     '崩溃报告',
+    row_adid:      '广告标识符',
+    row_network:   '任何网络请求',
+    h3_contact:    '联系方式',
+    contact_desc:  '如有关于本政策的问题，请联系：',
+    footer_guide:  '📖 玩法说明',
+    footer_contact:'联系我们',
+    page_title:    'Sudoku – 隐私政策',
+  },
+};
+
+const LANG_KEY = 'sudoku-lang';
+
+function applyLang(lang) {
+  const t = i18n[lang] || i18n.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = t[el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+  if (t.page_title) document.title = t.page_title;
+  localStorage.setItem(LANG_KEY, lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn =>
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
+
+(function init() {
+  const saved = localStorage.getItem(LANG_KEY);
+  const browser = (navigator.language || 'en').split('-')[0];
+  const supported = Object.keys(i18n);
+  const lang = supported.includes(saved) ? saved
+             : supported.includes(browser) ? browser : 'en';
+  applyLang(lang);
+})();
+</script>
+</body>
+</html>
